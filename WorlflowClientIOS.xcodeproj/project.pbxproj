@@ -23,6 +23,8 @@
 		677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */; };
 		677F78EE1C196D0D001DFD0E /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */; };
 		677F78F21C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */; };
+		67FA37971C198E2500D992CC /* WorkingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37961C198E2500D992CC /* WorkingDataStore.swift */; };
+		67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCommentTableViewCell.swift; sourceTree = "<group>"; };
 		677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		67FA37961C198E2500D992CC /* WorkingDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDataStore.swift; sourceTree = "<group>"; };
+		67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeePendingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 				677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */,
 				677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */,
 				677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */,
+				67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		677F78F31C198A45001DFD0E /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				67FA37961C198E2500D992CC /* WorkingDataStore.swift */,
 			);
 			name = Stores;
 			sourceTree = "<group>";
@@ -332,11 +338,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				677F78EE1C196D0D001DFD0E /* TaskDetailsViewController.swift in Sources */,
+				67FA37971C198E2500D992CC /* WorkingDataStore.swift in Sources */,
 				677F78EA1C1952F8001DFD0E /* EmployeeSendMessageViewController.swift in Sources */,
 				674D053B1C1827F50011238C /* ViewController.swift in Sources */,
 				674D056A1C182E550011238C /* EmployeeWorkingStatusTableViewController.swift in Sources */,
 				674D05411C1827F50011238C /* WorlflowClientIOS.xcdatamodeld in Sources */,
 				674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */,
+				67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */,
 				677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */,
 				677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */,
 				674D05721C183A360011238C /* Task.swift in Sources */,

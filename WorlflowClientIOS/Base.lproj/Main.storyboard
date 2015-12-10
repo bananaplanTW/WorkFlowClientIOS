@@ -76,8 +76,36 @@
                                     <segue destination="yhp-FO-bZa" kind="show" id="wNA-qD-nZu"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeePendingTableViewCell" rowHeight="160" id="W8C-De-DVh" customClass="EmployeePendingTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="273.5" width="600" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W8C-De-DVh" id="Sa4-U2-jId">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="準備下一項工作中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-AF-lmK">
+                                            <rect key="frame" x="212" y="55" width="176" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點取下方工作區開始工作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56z-vt-U3t">
+                                            <rect key="frame" x="218" y="83" width="165" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="g9j-AF-lmK" firstAttribute="centerX" secondItem="Sa4-U2-jId" secondAttribute="centerX" id="UnS-gQ-Zij"/>
+                                        <constraint firstItem="56z-vt-U3t" firstAttribute="top" secondItem="g9j-AF-lmK" secondAttribute="bottom" constant="2" id="hQR-vI-I1R"/>
+                                        <constraint firstItem="56z-vt-U3t" firstAttribute="centerX" secondItem="Sa4-U2-jId" secondAttribute="centerX" id="m5g-rW-oOF"/>
+                                        <constraint firstItem="g9j-AF-lmK" firstAttribute="top" secondItem="Sa4-U2-jId" secondAttribute="topMargin" constant="47" id="ngt-w6-m5L"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeScheduledTaskTableViewCell" rowHeight="60" id="nhm-jo-46S" customClass="EmployeeScheduledTaskTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="273.5" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="433.5" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nhm-jo-46S" id="JTe-Ok-lcT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>

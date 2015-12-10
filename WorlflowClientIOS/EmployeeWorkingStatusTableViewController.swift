@@ -10,9 +10,9 @@ import UIKit
 
 class EmployeeWorkingStatusTableViewController: UITableViewController {
 
-    let currentTask:Task = Task(id: "asf", name: "管理", caseName: "nicloud 專案管理");
+    var wipTask: Task? = WorkingDataStore.sharedInstance().getWipTask()
+    var scheduletTaskList: Array<Task> = WorkingDataStore.sharedInstance().getScheduledTaskList()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,26 +40,32 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            return 3
+            return scheduletTaskList.count
         }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
+            
+            
+            if let name = wipTask?.name {
+                let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeCurrentTaskTableViewCell", forIndexPath: indexPath) as! EmployeeCurrentTaskTableViewCell
+                cell.taskName.text = name
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("EmployeePendingTableViewCell", forIndexPath: indexPath) as! EmployeePendingTableViewCell
+                return cell
+            }
+
+            
+        } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeScheduledTaskTableViewCell", forIndexPath: indexPath) as! EmployeeScheduledTaskTableViewCell
             
-            cell.taskName.text = currentTask.name
+            cell.taskName.text = scheduletTaskList[indexPath.row].name
+            cell.index.text = String(indexPath.row + 1)
             return cell
         }
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeCurrentTaskTableViewCell", forIndexPath: indexPath) as! EmployeeCurrentTaskTableViewCell
-        
-        cell.taskName.text = currentTask.name
-
-        // Configure the cell...
-
-        return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -71,12 +77,12 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 36
+        return 40
     }
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionView = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 36))
-        let titleLabel = UILabel(frame: CGRectMake(10, 0, UIScreen.mainScreen().bounds.size.width, 36))
+        let sectionView = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 40))
+        let titleLabel = UILabel(frame: CGRectMake(10, 0, UIScreen.mainScreen().bounds.size.width, 40))
         titleLabel.font = UIFont(name: "Avenir-Regular", size: 10.0)
         
         if section == 0 {
