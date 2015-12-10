@@ -15,6 +15,10 @@
 		674D05461C1827F60011238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674D05441C1827F60011238C /* LaunchScreen.storyboard */; };
 		674D05511C1827F60011238C /* WorlflowClientIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05501C1827F60011238C /* WorlflowClientIOSTests.swift */; };
 		674D055C1C1827F60011238C /* WorlflowClientIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D055B1C1827F60011238C /* WorlflowClientIOSUITests.swift */; };
+		674D056A1C182E550011238C /* EmployeeWorkingStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05691C182E550011238C /* EmployeeWorkingStatusTableViewController.swift */; };
+		674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */; };
+		674D05721C183A360011238C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05711C183A360011238C /* Task.swift */; };
+		677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		674D05571C1827F60011238C /* WorlflowClientIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorlflowClientIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		674D055B1C1827F60011238C /* WorlflowClientIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorlflowClientIOSUITests.swift; sourceTree = "<group>"; };
 		674D055D1C1827F60011238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		674D05691C182E550011238C /* EmployeeWorkingStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeWorkingStatusTableViewController.swift; sourceTree = "<group>"; };
+		674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCurrentTaskTableViewCell.swift; sourceTree = "<group>"; };
+		674D05711C183A360011238C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeScheduledTaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,8 @@
 		674D05371C1827F50011238C /* WorlflowClientIOS */ = {
 			isa = PBXGroup;
 			children = (
+				674D05701C183A0A0011238C /* Data */,
+				674D056B1C182E640011238C /* ViewController */,
 				674D05381C1827F50011238C /* AppDelegate.swift */,
 				674D053A1C1827F50011238C /* ViewController.swift */,
 				674D053C1C1827F50011238C /* Main.storyboard */,
@@ -126,6 +136,24 @@
 				674D055D1C1827F60011238C /* Info.plist */,
 			);
 			path = WorlflowClientIOSUITests;
+			sourceTree = "<group>";
+		};
+		674D056B1C182E640011238C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				674D05691C182E550011238C /* EmployeeWorkingStatusTableViewController.swift */,
+				674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */,
+				677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		674D05701C183A0A0011238C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				674D05711C183A360011238C /* Task.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				674D053B1C1827F50011238C /* ViewController.swift in Sources */,
+				674D056A1C182E550011238C /* EmployeeWorkingStatusTableViewController.swift in Sources */,
 				674D05411C1827F50011238C /* WorlflowClientIOS.xcdatamodeld in Sources */,
+				674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */,
+				677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */,
+				674D05721C183A360011238C /* Task.swift in Sources */,
 				674D05391C1827F50011238C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WorlflowClientIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bananaplan.WorlflowClientIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WorlflowClientIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bananaplan.WorlflowClientIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +522,7 @@
 				674D05621C1827F60011238C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		674D05631C1827F60011238C /* Build configuration list for PBXNativeTarget "WorlflowClientIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +531,7 @@
 				674D05651C1827F60011238C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		674D05661C1827F60011238C /* Build configuration list for PBXNativeTarget "WorlflowClientIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +540,7 @@
 				674D05681C1827F60011238C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
