@@ -18,4 +18,12 @@ class Task {
         self.name = name;
         self.caseName = caseName;
     }
+
+    class func createTask (attributes: NSDictionary) -> Task {
+        return Task(
+            id: attributes["_id"] as! String,
+            name: attributes["name"] as! String,
+            caseName: attributes["caseName"] as! String
+        )
+    }
 }

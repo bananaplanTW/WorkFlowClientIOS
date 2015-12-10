@@ -16,18 +16,14 @@ class WorkingDataStore {
         return Static.instance
     }
 
+    static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
     
     private final let BASE_URL:String = "http://10.1.1.70:3000"
     private final class END_POINTS {
         static let EMPLOYEE_TASKS = "/api/employee/tasks"
     }
     
-    private init() {
-//        wipTask = Task(id: "asf", name: "管理1", caseName: "nicloud 專案管理")
-        scheduledTaskList = [Task(id: "asf", name: "管理2", caseName: "nicloud 專案管理"),
-                             Task(id: "asf", name: "管理3", caseName: "nicloud 專案管理"),
-                             Task(id: "asf", name: "管理4", caseName: "nicloud 專案管理")];
-    }
+    private init() {}
 
     private var wipTask: Task?
     private var scheduledTaskList: Array<Task> = []
@@ -48,15 +44,21 @@ class WorkingDataStore {
 
         RestfulUtils.get(urlString, headers: headers) {
             (response: NSURLResponse!, data: NSData?, error: NSError!) -> Void in
-            print("ya")
             if error == nil && data != nil {
-                print("success")
-                print(data)
-
                 let parsedData: AnyObject?
                 do {
+
                     parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    print(parsedData!)
+                    print(parsedData)
+                    
+                    if let response = parsedData as? NSDictionary {
+                        if response["status"] as! String == "success" {
+                            self.parsePersonalTasks(response["result"] as! NSDictionary)
+                        }
+                    }
+
+                    NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
+                    
                 } catch {
                     parsedData = nil
                 }
@@ -74,6 +76,23 @@ class WorkingDataStore {
     }
     func getScheduledTaskList () -> Array<Task> {
         return scheduledTaskList
+    }
+    
+    
+    private func parsePersonalTasks (parsedData: NSDictionary) {
+        if let _wipTask = parsedData["WIPTask"] as? NSDictionary {
+            wipTask = Task.createTask(_wipTask)
+        }
+        
+        scheduledTaskList = []
+        if let _scheduledTasks = parsedData["scheduledTasks"] as? NSArray {
+            for task in _scheduledTasks {
+                scheduledTaskList.append(Task.createTask(task as! NSDictionary))
+            }
+        }
+        print("tasks")
+        print(wipTask)
+        print(scheduledTaskList)
     }
 
 }

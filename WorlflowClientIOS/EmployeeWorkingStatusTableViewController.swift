@@ -21,6 +21,8 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,11 +49,11 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            
-            
-            if let name = wipTask?.name {
+
+            if let _wipTask = wipTask {
                 let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeCurrentTaskTableViewCell", forIndexPath: indexPath) as! EmployeeCurrentTaskTableViewCell
-                cell.taskName.text = name
+                cell.taskName.text = _wipTask.name
+                cell.caseName.text = _wipTask.caseName
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("EmployeePendingTableViewCell", forIndexPath: indexPath) as! EmployeePendingTableViewCell
@@ -94,6 +96,13 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         sectionView.addSubview(titleLabel)
         
         return sectionView
+    }
+    
+    func onTaskDataUpdated () {
+        wipTask = WorkingDataStore.sharedInstance().getWipTask()
+        scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
+        
+        tableView.reloadData()
     }
 
     /*
