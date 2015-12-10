@@ -17,6 +17,7 @@ class WorkingDataStore {
     }
 
     static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
+    static let ACTION_UPDATE_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
     
     private final let BASE_URL:String = "http://10.1.1.70:3000"
     private final class END_POINTS {
@@ -56,12 +57,12 @@ class WorkingDataStore {
                             self.parsePersonalTasks(response["result"] as! NSDictionary)
                         }
                     }
-
-                    NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
                     
                 } catch {
                     parsedData = nil
                 }
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
                 
             } else {
                 print(error)
@@ -80,10 +81,11 @@ class WorkingDataStore {
     
     
     private func parsePersonalTasks (parsedData: NSDictionary) {
+        wipTask = nil
         if let _wipTask = parsedData["WIPTask"] as? NSDictionary {
             wipTask = Task.createTask(_wipTask)
         }
-        
+
         scheduledTaskList = []
         if let _scheduledTasks = parsedData["scheduledTasks"] as? NSArray {
             for task in _scheduledTasks {

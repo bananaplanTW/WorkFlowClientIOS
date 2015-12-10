@@ -22,8 +22,20 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
+        
+        initViews()
     }
+    
+    func initViews () {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "onRefreshingTaskData", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func onRefreshingTaskData () {
+        WorkingDataStore.sharedInstance().syncTasks()
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -103,6 +115,10 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
         
         tableView.reloadData()
+        
+        if refreshControl != nil {
+            refreshControl?.endRefreshing()
+        }
     }
 
     /*

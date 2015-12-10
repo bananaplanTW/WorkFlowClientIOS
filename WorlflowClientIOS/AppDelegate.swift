@@ -17,7 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoadedEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
         return true
+    }
+    
+    func onLoadedEmployeeTasks () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -37,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
         // [TODO] should inform all
         WorkingDataStore.sharedInstance().syncTasks()
     }
