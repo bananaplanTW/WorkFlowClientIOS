@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Employee Working Status Table View Controller-->
@@ -45,6 +46,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="taskName" destination="5lU-43-ych" id="42T-ga-OA6"/>
+                                    <segue destination="yhp-FO-bZa" kind="show" id="wNA-qD-nZu"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeScheduledTaskTableViewCell" rowHeight="86" id="nhm-jo-46S" customClass="EmployeeScheduledTaskTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
@@ -78,6 +80,7 @@
                                     <outlet property="index" destination="NwJ-1U-Ldj" id="KWW-on-XdT"/>
                                     <outlet property="taskName" destination="nI8-dG-8Do" id="ROi-gp-mJc"/>
                                     <outlet property="taskStatus" destination="w4h-b9-fc2" id="lq6-WI-Lri"/>
+                                    <segue destination="yhp-FO-bZa" kind="show" id="wBo-vJ-JnY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,6 +117,96 @@
             </objects>
             <point key="canvasLocation" x="1442" y="1270"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="fzf-an-MR9">
+            <objects>
+                <viewController id="yhp-FO-bZa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="exL-Ag-kHs"/>
+                        <viewControllerLayoutGuide type="bottom" id="pC4-fC-7Ni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="05u-N0-0xO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="task activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4t-xt-A7j">
+                                <rect key="frame" x="20" y="90" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="3q3-Co-gxc">
+                        <barButtonItem key="rightBarButtonItem" title="Comment" id="qyb-ws-tpC">
+                            <connections>
+                                <segue destination="Xf8-1o-ZZ2" kind="presentation" id="yeD-46-Mxf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHx-9n-xaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134" y="1276"/>
+        </scene>
+        <!--Employee Send Message View Controller-->
+        <scene sceneID="TGn-fV-uhF">
+            <objects>
+                <viewController id="Xf8-1o-ZZ2" customClass="EmployeeSendMessageViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F7q-vc-Yqx"/>
+                        <viewControllerLayoutGuide type="bottom" id="O48-Ln-gMg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rjV-ti-FVw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztr-dV-Ihv">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Leave Comment" id="SOp-wW-nzb">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="3wv-pC-Amb">
+                                            <connections>
+                                                <action selector="doneButton:" destination="Xf8-1o-ZZ2" id="FKT-su-5R1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-Ra-bQE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="190"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-au-F0e">
+                                <rect key="frame" x="28" y="550" width="30" height="30"/>
+                                <state key="normal" title="照片"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-20-Hcp">
+                                <rect key="frame" x="542" y="550" width="30" height="30"/>
+                                <state key="normal" title="發文"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ztr-dV-Ihv" secondAttribute="trailing" constant="-20" id="5BM-8a-02l"/>
+                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="20" id="FT4-ib-Vzh"/>
+                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="20" id="P1w-cw-aP4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" constant="8" id="Q5w-LN-Usg"/>
+                            <constraint firstItem="PJ6-au-F0e" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="8" id="UyC-W3-b6e"/>
+                            <constraint firstItem="ztr-dV-Ihv" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" id="hC6-Vf-cDW"/>
+                            <constraint firstItem="ztr-dV-Ihv" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-20" id="wda-jW-kxf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-p0-OhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="1277"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VHA-5q-K0e">
             <objects>
@@ -134,4 +227,7 @@
     <resources>
         <image name="icon" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wNA-qD-nZu"/>
+    </inferredMetricsTieBreakers>
 </document>

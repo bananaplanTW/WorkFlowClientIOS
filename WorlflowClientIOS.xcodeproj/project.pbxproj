@@ -19,6 +19,7 @@
 		674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */; };
 		674D05721C183A360011238C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05711C183A360011238C /* Task.swift */; };
 		677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */; };
+		677F78EA1C1952F8001DFD0E /* EmployeeSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCurrentTaskTableViewCell.swift; sourceTree = "<group>"; };
 		674D05711C183A360011238C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeScheduledTaskTableViewCell.swift; sourceTree = "<group>"; };
+		677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeSendMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				674D05691C182E550011238C /* EmployeeWorkingStatusTableViewController.swift */,
 				674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */,
 				677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */,
+				677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677F78EA1C1952F8001DFD0E /* EmployeeSendMessageViewController.swift in Sources */,
 				674D053B1C1827F50011238C /* ViewController.swift in Sources */,
 				674D056A1C182E550011238C /* EmployeeWorkingStatusTableViewController.swift in Sources */,
 				674D05411C1827F50011238C /* WorlflowClientIOS.xcdatamodeld in Sources */,
