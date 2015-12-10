@@ -20,6 +20,9 @@
 		674D05721C183A360011238C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05711C183A360011238C /* Task.swift */; };
 		677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */; };
 		677F78EA1C1952F8001DFD0E /* EmployeeSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */; };
+		677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */; };
+		677F78EE1C196D0D001DFD0E /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */; };
+		677F78F21C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		674D05711C183A360011238C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeScheduledTaskTableViewCell.swift; sourceTree = "<group>"; };
 		677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeSendMessageViewController.swift; sourceTree = "<group>"; };
+		677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCommentTableViewCell.swift; sourceTree = "<group>"; };
+		677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPhotoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,8 @@
 		674D05371C1827F50011238C /* WorlflowClientIOS */ = {
 			isa = PBXGroup;
 			children = (
-				674D05701C183A0A0011238C /* Data */,
-				674D056B1C182E640011238C /* ViewController */,
+				677F78EF1C19767C001DFD0E /* Views */,
+				674D05701C183A0A0011238C /* Models */,
 				674D05381C1827F50011238C /* AppDelegate.swift */,
 				674D053A1C1827F50011238C /* ViewController.swift */,
 				674D053C1C1827F50011238C /* Main.storyboard */,
@@ -144,14 +150,49 @@
 			isa = PBXGroup;
 			children = (
 				674D05691C182E550011238C /* EmployeeWorkingStatusTableViewController.swift */,
-				674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */,
-				677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */,
 				677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */,
+				677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		674D05701C183A0A0011238C /* Data */ = {
+		674D05701C183A0A0011238C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				677F78F41C198A4C001DFD0E /* Data */,
+				677F78F31C198A45001DFD0E /* Stores */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		677F78EF1C19767C001DFD0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				677F78F01C19768C001DFD0E /* TableCells */,
+				674D056B1C182E640011238C /* ViewController */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		677F78F01C19768C001DFD0E /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				674D056E1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift */,
+				677F78E71C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift */,
+				677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */,
+				677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		677F78F31C198A45001DFD0E /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
+		677F78F41C198A4C001DFD0E /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				674D05711C183A360011238C /* Task.swift */,
@@ -290,13 +331,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677F78EE1C196D0D001DFD0E /* TaskDetailsViewController.swift in Sources */,
 				677F78EA1C1952F8001DFD0E /* EmployeeSendMessageViewController.swift in Sources */,
 				674D053B1C1827F50011238C /* ViewController.swift in Sources */,
 				674D056A1C182E550011238C /* EmployeeWorkingStatusTableViewController.swift in Sources */,
 				674D05411C1827F50011238C /* WorlflowClientIOS.xcdatamodeld in Sources */,
 				674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */,
 				677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */,
+				677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */,
 				674D05721C183A360011238C /* Task.swift in Sources */,
+				677F78F21C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift in Sources */,
 				674D05391C1827F50011238C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

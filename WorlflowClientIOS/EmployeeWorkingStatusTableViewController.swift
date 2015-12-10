@@ -10,7 +10,7 @@ import UIKit
 
 class EmployeeWorkingStatusTableViewController: UITableViewController {
 
-    let currentTask:Task = Task(id: "asf", name: "管理");
+    let currentTask:Task = Task(id: "asf", name: "管理", caseName: "nicloud 專案管理");
 
     
     override func viewDidLoad() {
@@ -64,9 +64,9 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 210
+            return 160
         } else {
-            return 85
+            return 60
         }
     }
     

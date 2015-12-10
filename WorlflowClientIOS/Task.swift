@@ -11,9 +11,11 @@ import Foundation
 class Task {
     let id:String
     let name: String
+    let caseName: String
     
-    init (id:String, name: String){
+    init (id:String, name: String, caseName: String){
         self.id = id;
         self.name = name;
+        self.caseName = caseName;
     }
 }

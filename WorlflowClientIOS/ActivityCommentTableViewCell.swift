@@ -1,19 +1,20 @@
 //
-//  EmployeeCurrentTaskTableViewCell.swift
+//  ActivityCommentTableViewCell.swift
 //  WorlflowClientIOS
 //
-//  Created by Daz on 12/9/15.
+//  Created by Daz on 12/10/15.
 //  Copyright © 2015 Daz. All rights reserved.
 //
 
 import UIKit
 
-class EmployeeCurrentTaskTableViewCell: UITableViewCell {
+class ActivityCommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var icon: UIView!
+    @IBOutlet weak var employeeName: UILabel!
+    @IBOutlet weak var comment: UITextView!
+    @IBOutlet weak var time: UILabel!
 
-    @IBOutlet weak var taskName: UILabel!
-    @IBOutlet weak var caseName: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +26,4 @@ class EmployeeCurrentTaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func handlePauseTask(sender: UIButton) {
-    }
-    @IBAction func handleCompleteTask(sender: UIButton) {
-    }
 }
