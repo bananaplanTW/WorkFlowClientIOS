@@ -10,7 +10,7 @@
         <scene sceneID="FYY-TZ-VaT">
             <objects>
                 <tableViewController id="D3i-jo-tCx" customClass="EmployeeWorkingStatusTableViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="212" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dd4-eT-Emb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="212" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dd4-eT-Emb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                     <segue destination="yhp-FO-bZa" kind="show" identifier="segueTaskDetails" id="wNA-qD-nZu"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeePendingTableViewCell" rowHeight="160" id="W8C-De-DVh" customClass="EmployeePendingTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmployeePendingTableViewCell" rowHeight="160" id="W8C-De-DVh" customClass="EmployeePendingTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="273.5" width="600" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W8C-De-DVh" id="Sa4-U2-jId">

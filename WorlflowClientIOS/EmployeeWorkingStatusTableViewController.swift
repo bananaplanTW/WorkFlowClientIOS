@@ -169,16 +169,16 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         return true
     }
     */
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
-//        if indexPath.section == 1 {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let scheduledTaskActionsPromptViewController = storyboard.instantiateViewControllerWithIdentifier("ScheduledTaskActionsPromptViewController") as! ScheduledTaskActionsPromptViewController
-//
-//            scheduledTaskActionsPromptViewController.task = scheduletTaskList[indexPath.row]
-//            self.presentViewController(scheduledTaskActionsPromptViewController, animated: true, completion: nil)
-//        }
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        print(indexPath)
+////        if indexPath.section == 1 {
+////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+////            let scheduledTaskActionsPromptViewController = storyboard.instantiateViewControllerWithIdentifier("ScheduledTaskActionsPromptViewController") as! ScheduledTaskActionsPromptViewController
+////
+////            scheduledTaskActionsPromptViewController.task = scheduletTaskList[indexPath.row]
+////            self.presentViewController(scheduledTaskActionsPromptViewController, animated: true, completion: nil)
+////        }
+//    }
 
     // MARK: - Navigation
 
