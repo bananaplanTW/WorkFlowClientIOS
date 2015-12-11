@@ -10,8 +10,8 @@ import UIKit
 
 class EmployeeWorkingStatusTableViewController: UITableViewController {
 
-    var wipTask: Task? = WorkingDataStore.sharedInstance().getWipTask()
-    var scheduletTaskList: Array<Task> = WorkingDataStore.sharedInstance().getScheduledTaskList()
+    var wipTask: Task?
+    var scheduletTaskList: Array<Task>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
 
         registerNotificationObservers()
         initViews()
+        initData()
     }
     
     func registerNotificationObservers () {
@@ -34,6 +35,10 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     func initViews () {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "onRefreshingTaskData", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    func initData () {
+        wipTask = WorkingDataStore.sharedInstance().getWipTask()
+        scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
     }
 
     func onRefreshingTaskData () {

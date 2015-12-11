@@ -22,11 +22,6 @@ class WorkingDataStore {
     static let ACTION_UPDATE_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
     static let ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS = "actionCancelUpdateEmployeeTasks"
     
-    private final let BASE_URL:String = "http://10.1.1.55:3000"
-    private final class END_POINTS {
-        static let EMPLOYEE_TASKS = "/api/employee/tasks"
-    }
-    
     private init() {}
 
     private var wipTask: Task?
@@ -34,6 +29,22 @@ class WorkingDataStore {
     private var authToken:String = "adjzyrbxHsyGZeaQV2kvq2SOWS71HlYFF5K1YOwi-b9"
     private var userId: String = "QNXpzjCQhiqYpGJdD"
     
+    
+    func getUserId () -> String {
+        return userId
+    }
+    func getAuthToken () -> String {
+        return authToken
+    }
+    
+    
+    func getWipTask () -> Task? {
+        return wipTask
+    }
+    func getScheduledTaskList () -> Array<Task> {
+        return scheduledTaskList
+    }
+
     
     func syncTasks () {
         // sync task data from server
@@ -44,7 +55,7 @@ class WorkingDataStore {
         let queries: Dictionary = [
             "employeeId": userId
         ]
-        let urlString: String = URLUtils.buildURLString(BASE_URL, endPoint: END_POINTS.EMPLOYEE_TASKS, queries: queries)
+        let urlString: String = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.EMPLOYEE_TASKS, queries: queries)
 
         RestfulUtils.get(urlString, headers: headers) {
             (response: NSURLResponse!, data: NSData?, error: NSError!) -> Void in
@@ -72,15 +83,6 @@ class WorkingDataStore {
                 NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
             }
         }
-        print(urlString)
-    }
-
-
-    func getWipTask () -> Task? {
-        return wipTask
-    }
-    func getScheduledTaskList () -> Array<Task> {
-        return scheduledTaskList
     }
     
     

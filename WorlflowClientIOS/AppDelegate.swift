@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadTaskActivities", name: TaskActivityDataStore.ACTION_LOAD_TASK_ACTIVITIES_COMPLETE, object: nil)
         return true
     }
     
@@ -28,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func onFailLoadingEmployeeTasks () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS, object: nil)
+    }
+    func onDidLoadTaskActivities () {
+        NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_UPDATE_TASK_ACTIVITIES, object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
