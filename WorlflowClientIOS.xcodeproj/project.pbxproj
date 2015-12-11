@@ -23,6 +23,7 @@
 		677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */; };
 		677F78EE1C196D0D001DFD0E /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */; };
 		677F78F21C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */; };
+		67DFC3001C1A6A6A00713DFB /* ActivityFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DFC2FF1C1A6A6A00713DFB /* ActivityFileTableViewCell.swift */; };
 		67FA37971C198E2500D992CC /* WorkingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37961C198E2500D992CC /* WorkingDataStore.swift */; };
 		67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */; };
 		67FA379C1C1998F800D992CC /* RestfulUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379B1C1998F800D992CC /* RestfulUtils.swift */; };
@@ -69,6 +70,7 @@
 		677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCommentTableViewCell.swift; sourceTree = "<group>"; };
 		677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		67DFC2FF1C1A6A6A00713DFB /* ActivityFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFileTableViewCell.swift; sourceTree = "<group>"; };
 		67FA37961C198E2500D992CC /* WorkingDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDataStore.swift; sourceTree = "<group>"; };
 		67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeePendingTableViewCell.swift; sourceTree = "<group>"; };
 		67FA379B1C1998F800D992CC /* RestfulUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestfulUtils.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				677F78EB1C196C17001DFD0E /* ActivityCommentTableViewCell.swift */,
 				677F78F11C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift */,
 				67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */,
+				67DFC2FF1C1A6A6A00713DFB /* ActivityFileTableViewCell.swift */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				674D056F1C1836250011238C /* EmployeeCurrentTaskTableViewCell.swift in Sources */,
 				67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */,
 				677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */,
+				67DFC3001C1A6A6A00713DFB /* ActivityFileTableViewCell.swift in Sources */,
 				67FA379C1C1998F800D992CC /* RestfulUtils.swift in Sources */,
 				677F78EC1C196C17001DFD0E /* ActivityCommentTableViewCell.swift in Sources */,
 				674D05721C183A360011238C /* Task.swift in Sources */,

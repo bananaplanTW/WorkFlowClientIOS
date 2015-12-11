@@ -25,14 +25,16 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
+        return 3;
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 85
-        } else {
+        } else if indexPath.row == 1 {
             return 240
+        } else {
+            return 85
         }
     }
     
@@ -45,14 +47,32 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             cell.comment.text = "this is generated from TaskDetailsViewController, today is a really good day to go outside!"
             return cell
             
-        } else {
+        } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
+            cell.employeeName.text = "DANNY"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
             cell.employeeName.text = "DANNY"
             return cell
         }
         
     }
     
+    @IBAction func activityTypeIndexChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("todos")
+        case 1:
+            print("comments")
+        case 2:
+            print("photos")
+        case 3:
+            print("files")
+        default:
+            break;
+        }
+    }
 
     /*
     // MARK: - Navigation
