@@ -86,6 +86,7 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
 
             if let _wipTask = wipTask {
                 let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeCurrentTaskTableViewCell", forIndexPath: indexPath) as! EmployeeCurrentTaskTableViewCell
+                cell.task = _wipTask
                 cell.taskName.text = _wipTask.name
                 cell.caseName.text = _wipTask.caseName
                 return cell
@@ -97,8 +98,10 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("EmployeeScheduledTaskTableViewCell", forIndexPath: indexPath) as! EmployeeScheduledTaskTableViewCell
-            
-            cell.taskName.text = scheduletTaskList[indexPath.row].name
+            let task = scheduletTaskList[indexPath.row]
+
+            cell.task = task
+            cell.taskName.text = task.name
             cell.index.text = String(indexPath.row + 1)
             return cell
         }
@@ -167,14 +170,28 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "segueTaskDetails" {
+            let destinationViewController: TaskDetailsViewController = segue.destinationViewController as! TaskDetailsViewController
+
+            switch sender {
+            case is EmployeeCurrentTaskTableViewCell:
+                destinationViewController.task = (sender as! EmployeeCurrentTaskTableViewCell).task
+                break
+            case is EmployeeScheduledTaskTableViewCell:
+                destinationViewController.task = (sender as! EmployeeScheduledTaskTableViewCell).task
+                break
+            default:
+                break
+            }
+
+        }
     }
-    */
 
 }

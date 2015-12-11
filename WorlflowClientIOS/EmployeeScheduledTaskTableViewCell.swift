@@ -10,6 +10,8 @@ import UIKit
 
 class EmployeeScheduledTaskTableViewCell: UITableViewCell {
 
+    var task: Task!
+
     @IBOutlet weak var index: UILabel!
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskStatus: UILabel!

@@ -10,6 +10,7 @@ import UIKit
 
 class EmployeeCurrentTaskTableViewCell: UITableViewCell {
 
+    var task: Task!
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var caseName: UILabel!

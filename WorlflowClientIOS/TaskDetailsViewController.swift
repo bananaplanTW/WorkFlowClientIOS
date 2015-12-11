@@ -10,8 +10,11 @@ import UIKit
 
 class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var taskActivityDataStoreInstance: TaskActivityDataStore!
+    // will be set by parent view controller
     var task: Task!
-    
+
+    var taskId: String!
     var taskActivities: Array<Activity>!
     var activityType: ActivityType!
     var isShowingTodo: Bool!
@@ -29,18 +32,18 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func initData () {
-        TaskActivityDataStore.sharedInstance().syncTaskActivities("2jPbLTe3ACARf4Fwz")
-
+        taskActivityDataStoreInstance = TaskActivityDataStore.sharedInstance()
+        taskId = task.id
+        
         isShowingTodo = true
-
-        // should detect user picking task data
-        task = WorkingDataStore.sharedInstance().getWipTask()!
         activityType = .TASK_COMMENT
-        taskActivities = TaskActivityDataStore.sharedInstance().getTaskActivitiesByTaskId("2jPbLTe3ACARf4Fwz")
+        taskActivities = taskActivityDataStoreInstance.getTaskActivitiesByTaskId(taskId)
+        
+        taskActivityDataStoreInstance.syncTaskActivities(taskId)
     }
 
     func onTaskActivityDataUpdated () {
-        taskActivities = TaskActivityDataStore.sharedInstance().getTaskActivitiesByTaskId("2jPbLTe3ACARf4Fwz")
+        taskActivities = taskActivityDataStoreInstance.getTaskActivitiesByTaskId(taskId)
         taskDetailsTableView.reloadData()
     }
     

@@ -73,7 +73,7 @@
                                 <connections>
                                     <outlet property="caseName" destination="qKo-yd-fuP" id="kv9-fr-3Yc"/>
                                     <outlet property="taskName" destination="5lU-43-ych" id="42T-ga-OA6"/>
-                                    <segue destination="yhp-FO-bZa" kind="show" id="wNA-qD-nZu"/>
+                                    <segue destination="yhp-FO-bZa" kind="show" identifier="segueTaskDetails" id="wNA-qD-nZu"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeePendingTableViewCell" rowHeight="160" id="W8C-De-DVh" customClass="EmployeePendingTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
@@ -149,7 +149,7 @@
                                     <outlet property="index" destination="NwJ-1U-Ldj" id="KWW-on-XdT"/>
                                     <outlet property="taskName" destination="nI8-dG-8Do" id="ROi-gp-mJc"/>
                                     <outlet property="taskStatus" destination="w4h-b9-fc2" id="lq6-WI-Lri"/>
-                                    <segue destination="yhp-FO-bZa" kind="show" id="wBo-vJ-JnY"/>
+                                    <segue destination="yhp-FO-bZa" kind="show" identifier="segueTaskDetails" id="wBo-vJ-JnY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -549,6 +549,6 @@
         <image name="icon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wNA-qD-nZu"/>
+        <segue reference="wBo-vJ-JnY"/>
     </inferredMetricsTieBreakers>
 </document>

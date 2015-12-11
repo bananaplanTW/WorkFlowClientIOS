@@ -48,10 +48,8 @@ class TaskActivityDataStore {
             if error == nil && data != nil {
                 let parsedData: AnyObject?
                 do {
-                    
                     parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    print(parsedData)
-                    
+
                     if let response = parsedData as? NSDictionary {
                         if response["status"] as! String == "success" {
                             self.parseTaskActivities(response["result"] as! Array, taskId: taskId)
@@ -75,11 +73,9 @@ class TaskActivityDataStore {
         var taskActivities: Array<Activity> = []
         for taskActivityAttributes: NSDictionary in result {
             if let activity = TaskActivityFactory.createTaskActivity(taskActivityAttributes) {
-                print(activity)
                 taskActivities.append(activity)
             }
         }
-        print(taskActivities)
         taskActivityMap[taskId] = taskActivities
     }
 }

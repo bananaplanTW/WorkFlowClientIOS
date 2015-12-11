@@ -38,6 +38,13 @@ class WorkingDataStore {
     }
     
     
+    func getTaskByTaskId (taskId: String) -> Task? {
+        if wipTask?.id == taskId {
+            return wipTask
+        } else {
+            return scheduledTaskList.filter({$0.id == taskId}).first
+        }
+    }
     func getWipTask () -> Task? {
         return wipTask
     }
