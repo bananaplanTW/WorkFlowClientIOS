@@ -25,6 +25,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         registerNotificationObservers()
         initData()
+        initViews()
     }
 
     func registerNotificationObservers () {
@@ -40,6 +41,10 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         taskActivities = taskActivityDataStoreInstance.getTaskActivitiesByTaskId(taskId)
         
         taskActivityDataStoreInstance.syncTaskActivities(taskId)
+    }
+    
+    func initViews () {
+        taskDetailsTableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     func onTaskActivityDataUpdated () {
@@ -74,6 +79,10 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         case .TASK_PHOTO:
             return 240
         }
+    }
+
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
