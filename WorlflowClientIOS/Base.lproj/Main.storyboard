@@ -524,6 +524,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="taskDetailsTableView" destination="gFZ-BE-yI4" id="bU7-62-vbn"/>
+                        <outlet property="topBar" destination="3q3-Co-gxc" id="6Pa-Ma-wh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHx-9n-xaz" userLabel="First Responder" sceneMemberID="firstResponder"/>

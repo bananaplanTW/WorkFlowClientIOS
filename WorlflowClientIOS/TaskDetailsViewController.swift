@@ -20,6 +20,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     var isShowingTodo: Bool!
 
     @IBOutlet weak var taskDetailsTableView: UITableView!
+    @IBOutlet weak var topBar: UINavigationItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func initViews () {
         taskDetailsTableView.tableFooterView = UIView(frame: CGRectZero)
+        topBar.title = task.name
     }
 
     func onTaskActivityDataUpdated () {
