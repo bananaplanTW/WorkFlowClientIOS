@@ -12,6 +12,7 @@ class Task {
     let id:String
     let name: String
     let caseName: String
+    var todos: Array<Todo> = []
     
     init (id:String, name: String, caseName: String){
         self.id = id;
@@ -20,10 +21,17 @@ class Task {
     }
 
     class func createTask (attributes: NSDictionary) -> Task {
-        return Task(
+        let task = Task(
             id: attributes["_id"] as! String,
             name: attributes["name"] as! String,
             caseName: attributes["caseName"] as! String
         )
+
+        var todos: Array<Todo> = []
+        for todoAttributes in attributes["todos"] as! NSArray {
+            todos.append(Todo.createTodo(todoAttributes as! NSDictionary))
+        }
+        task.todos = todos
+        return task
     }
 }

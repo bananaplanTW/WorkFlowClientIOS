@@ -303,8 +303,80 @@
                                             <outlet property="todoName" destination="Ei1-95-RLo" id="1Mr-eZ-KYq"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityFileTableViewCell" id="whm-Vv-hNk" customClass="ActivityFileTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="164" width="600" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="whm-Vv-hNk" id="Vs1-z7-wts">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="85.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015/12/12 12:20pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-Sz-rLs">
+                                                    <rect key="frame" x="437" y="13" width="155" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ajx-th-30b">
+                                                    <rect key="frame" x="13" y="13" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="RGz-mz-8Nn"/>
+                                                        <constraint firstAttribute="height" constant="60" id="aV1-pa-Qu9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danny Lin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-13-JKt">
+                                                    <rect key="frame" x="81" y="13" width="76" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳了一個檔案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYI-z6-r2x">
+                                                    <rect key="frame" x="191" y="33" width="401" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳了一個檔案 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isP-KT-eGa">
+                                                    <rect key="frame" x="81" y="33" width="112" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="hth-S7-Spj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="5xu-Xr-i0R"/>
+                                                <constraint firstItem="ajx-th-30b" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="B8N-ce-icV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YYI-z6-r2x" secondAttribute="trailing" id="Hsq-Cg-nqZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TAf-Sz-rLs" secondAttribute="trailing" id="Ikp-h4-MTC"/>
+                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="top" secondItem="wv5-13-JKt" secondAttribute="bottom" constant="8" id="LWc-jS-0TT"/>
+                                                <constraint firstItem="isP-KT-eGa" firstAttribute="top" secondItem="wv5-13-JKt" secondAttribute="bottom" constant="-1" id="M8L-Fk-duY"/>
+                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="leading" secondItem="isP-KT-eGa" secondAttribute="trailing" constant="-2" id="Oop-a8-oD4"/>
+                                                <constraint firstItem="wv5-13-JKt" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="UgR-B3-GAe"/>
+                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="top" secondItem="wv5-13-JKt" secondAttribute="bottom" constant="-1" id="WgN-kM-gxp"/>
+                                                <constraint firstItem="isP-KT-eGa" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="jBC-ke-fkk"/>
+                                                <constraint firstItem="wv5-13-JKt" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="mLu-Jc-PRP"/>
+                                                <constraint firstItem="wv5-13-JKt" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="qrO-kB-sZa"/>
+                                                <constraint firstItem="TAf-Sz-rLs" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="yMF-hh-ibH"/>
+                                                <constraint firstItem="ajx-th-30b" firstAttribute="leading" secondItem="Vs1-z7-wts" secondAttribute="leadingMargin" constant="5" id="yPO-3b-zTo"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="5xu-Xr-i0R"/>
+                                                    <exclude reference="LWc-jS-0TT"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="employeeName" destination="wv5-13-JKt" id="nEd-bI-EFa"/>
+                                            <outlet property="fileName" destination="YYI-z6-r2x" id="W0J-dO-b5b"/>
+                                            <outlet property="icon" destination="ajx-th-30b" id="sPb-3Y-UFV"/>
+                                            <outlet property="time" destination="TAf-Sz-rLs" id="IHa-4g-0F6"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityPhotoTableViewCell" rowHeight="240" id="N1d-Tc-3Vc" customClass="ActivityPhotoTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="164" width="600" height="240"/>
+                                        <rect key="frame" x="0.0" y="250" width="600" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1d-Tc-3Vc" id="xl1-5l-05p">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="239.5"/>
@@ -354,59 +426,6 @@
                                             <outlet property="icon" destination="gzQ-3d-zP3" id="ccN-1L-dLW"/>
                                             <outlet property="photo" destination="x67-3n-FjL" id="f5I-Dl-V2g"/>
                                             <outlet property="time" destination="AUn-jy-aJ9" id="dpo-Pu-Xkz"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityFileTableViewCell" id="whm-Vv-hNk" customClass="ActivityFileTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="404" width="600" height="86"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="whm-Vv-hNk" id="Vs1-z7-wts">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="85.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015/12/12 12:20pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-Sz-rLs">
-                                                    <rect key="frame" x="437" y="13" width="155" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ajx-th-30b">
-                                                    <rect key="frame" x="13" y="13" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="RGz-mz-8Nn"/>
-                                                        <constraint firstAttribute="height" constant="60" id="aV1-pa-Qu9"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danny Lin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-13-JKt">
-                                                    <rect key="frame" x="81" y="13" width="76" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳了一個檔案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYI-z6-r2x">
-                                                    <rect key="frame" x="81" y="42" width="511" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="5xu-Xr-i0R"/>
-                                                <constraint firstItem="ajx-th-30b" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="B8N-ce-icV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YYI-z6-r2x" secondAttribute="trailing" id="Hsq-Cg-nqZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="TAf-Sz-rLs" secondAttribute="trailing" id="Ikp-h4-MTC"/>
-                                                <constraint firstItem="YYI-z6-r2x" firstAttribute="top" secondItem="wv5-13-JKt" secondAttribute="bottom" constant="8" id="LWc-jS-0TT"/>
-                                                <constraint firstItem="wv5-13-JKt" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="UgR-B3-GAe"/>
-                                                <constraint firstItem="wv5-13-JKt" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="mLu-Jc-PRP"/>
-                                                <constraint firstItem="wv5-13-JKt" firstAttribute="leading" secondItem="ajx-th-30b" secondAttribute="trailing" constant="8" id="qrO-kB-sZa"/>
-                                                <constraint firstItem="TAf-Sz-rLs" firstAttribute="top" secondItem="Vs1-z7-wts" secondAttribute="topMargin" constant="5" id="yMF-hh-ibH"/>
-                                                <constraint firstItem="ajx-th-30b" firstAttribute="leading" secondItem="Vs1-z7-wts" secondAttribute="leadingMargin" constant="5" id="yPO-3b-zTo"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="employeeName" destination="wv5-13-JKt" id="nEd-bI-EFa"/>
-                                            <outlet property="fileName" destination="YYI-z6-r2x" id="W0J-dO-b5b"/>
-                                            <outlet property="icon" destination="ajx-th-30b" id="sPb-3Y-UFV"/>
-                                            <outlet property="time" destination="TAf-Sz-rLs" id="IHa-4g-0F6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

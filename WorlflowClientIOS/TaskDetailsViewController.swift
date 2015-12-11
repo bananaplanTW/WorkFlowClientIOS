@@ -10,10 +10,11 @@ import UIKit
 
 class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var task: Task!
+    
     var taskActivities: Array<Activity>!
-    var taskCommentActivities: Array<Activity>!
-
     var activityType: ActivityType!
+    var isShowingTodo: Bool!
 
     @IBOutlet weak var taskDetailsTableView: UITableView!
 
@@ -30,12 +31,14 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     func initData () {
         TaskActivityDataStore.sharedInstance().syncTaskActivities("2jPbLTe3ACARf4Fwz")
 
+        isShowingTodo = true
+
+        // should detect user picking task data
+        task = WorkingDataStore.sharedInstance().getWipTask()!
         activityType = .TASK_COMMENT
         taskActivities = TaskActivityDataStore.sharedInstance().getTaskActivitiesByTaskId("2jPbLTe3ACARf4Fwz")
-
-        taskCommentActivities = taskActivities.filter({$0.type == ActivityType.TASK_COMMENT})
     }
-    
+
     func onTaskActivityDataUpdated () {
         taskActivities = TaskActivityDataStore.sharedInstance().getTaskActivitiesByTaskId("2jPbLTe3ACARf4Fwz")
         taskDetailsTableView.reloadData()
@@ -49,12 +52,19 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isShowingTodo == true {
+            return task.todos.count
+        }
+        
         let count: Int = taskActivities.reduce(0, combine: {$0 + ($1.type == activityType ? 1 : 0)})
         return count
     }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if isShowingTodo == true {
+            return 50
+        }
+        
         switch activityType! {
         case .TASK_COMMENT, .TASK_FILE:
             return 85
@@ -64,11 +74,17 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // for render todo table view cell
+        if isShowingTodo == true {
+            let todo = task.todos[indexPath.row]
+            let cell = tableView.dequeueReusableCellWithIdentifier("TodoTableViewCell", forIndexPath: indexPath) as! TodoTableViewCell
+            cell.todoName.text = todo.name
+            return cell
+        }
+
 
         let activity = taskActivities.filter({$0.type == activityType})[indexPath.row]
-
         switch activityType! {
-
         case .TASK_COMMENT:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCommentTableViewCell", forIndexPath: indexPath) as! ActivityCommentTableViewCell
             cell.employeeName.text = activity.ownerName
@@ -83,48 +99,33 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         case .TASK_FILE:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
             cell.employeeName.text = activity.ownerName
+            cell.fileName.text = (activity as! TaskFileActivity).fileName
             return cell
         }
-//        
-//        if indexPath.row == 0 {
-//            
-//            
-//            
-//        } else if indexPath.row == 1 {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
-//            cell.employeeName.text = "DANNY"
-//            return cell
-//        } else if indexPath.row == 2 {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
-//            cell.employeeName.text = "DANNY"
-//            return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("TodoTableViewCell", forIndexPath: indexPath) as! TodoTableViewCell
-//            cell.todoName.text = "todo ohhhhh"
-//            return cell
-//        }
-        
     }
     
     @IBAction func activityTypeIndexChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            print("todos")
+            isShowingTodo = true
+            break
         case 1:
             activityType = .TASK_COMMENT
-            taskDetailsTableView.reloadData()
-            print("comments")
+            isShowingTodo = false
+            break
         case 2:
             activityType = .TASK_PHOTO
-            taskDetailsTableView.reloadData()
-            print("photos")
+            isShowingTodo = false
+            break
         case 3:
             activityType = .TASK_FILE
-            taskDetailsTableView.reloadData()
-            print("files")
-        default:
+            isShowingTodo = false
             break;
+        default:
+            break
         }
+        
+        taskDetailsTableView.reloadData()
     }
 
     /*
