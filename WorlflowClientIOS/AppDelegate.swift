@@ -18,12 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoadedEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
         return true
     }
     
-    func onLoadedEmployeeTasks () {
+    func onDidLoadEmployeeTasks () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
+    }
+    func onFailLoadingEmployeeTasks () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS, object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

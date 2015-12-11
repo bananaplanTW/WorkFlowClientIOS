@@ -17,9 +17,12 @@ class WorkingDataStore {
     }
 
     static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
-    static let ACTION_UPDATE_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
+    static let ACTION_LOAD_EMPLOYEE_TASKS_FAIL = "actionLoadEmployeeTasksFail"
     
-    private final let BASE_URL:String = "http://10.1.1.70:3000"
+    static let ACTION_UPDATE_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
+    static let ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS = "actionCancelUpdateEmployeeTasks"
+    
+    private final let BASE_URL:String = "http://10.1.1.55:3000"
     private final class END_POINTS {
         static let EMPLOYEE_TASKS = "/api/employee/tasks"
     }
@@ -66,6 +69,7 @@ class WorkingDataStore {
                 
             } else {
                 print(error)
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
             }
         }
         print(urlString)

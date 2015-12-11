@@ -21,19 +21,37 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
-        
+
+        registerNotificationObservers()
         initViews()
     }
     
+    func registerNotificationObservers () {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEndRefreshing", name: WorkingDataStore.ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS, object: nil)
+    }
+
     func initViews () {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "onRefreshingTaskData", forControlEvents: UIControlEvents.ValueChanged)
     }
-    
+
     func onRefreshingTaskData () {
         WorkingDataStore.sharedInstance().syncTasks()
+    }
+
+    func onTaskDataUpdated () {
+        wipTask = WorkingDataStore.sharedInstance().getWipTask()
+        scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
+        
+        tableView.reloadData()
+        
+        onEndRefreshing()
+    }
+    func onEndRefreshing () {
+        if refreshControl != nil {
+            refreshControl?.endRefreshing()
+        }
     }
 
 
@@ -42,8 +60,8 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
+    // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
@@ -57,7 +75,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
             return scheduletTaskList.count
         }
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -108,17 +125,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         sectionView.addSubview(titleLabel)
         
         return sectionView
-    }
-    
-    func onTaskDataUpdated () {
-        wipTask = WorkingDataStore.sharedInstance().getWipTask()
-        scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
-        
-        tableView.reloadData()
-        
-        if refreshControl != nil {
-            refreshControl?.endRefreshing()
-        }
     }
 
     /*
