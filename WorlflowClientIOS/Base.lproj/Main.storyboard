@@ -503,14 +503,29 @@
                                     <outlet property="delegate" destination="yhp-FO-bZa" id="qTf-W4-RaM"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgE-Zq-7qa">
+                                <rect key="frame" x="-1" y="512" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aby-AT-mtL"/>
+                                    <barButtonItem title="開始此工作" id="P9R-Sg-BwH">
+                                        <connections>
+                                            <action selector="onStartingTask:" destination="yhp-FO-bZa" id="pWd-Zb-P8K"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2mh-nd-x2h"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gFZ-BE-yI4" firstAttribute="top" secondItem="exL-Ag-kHs" secondAttribute="bottom" constant="64" id="1ob-iO-QiH"/>
                             <constraint firstItem="pC4-fC-7Ni" firstAttribute="top" secondItem="gFZ-BE-yI4" secondAttribute="bottom" id="64n-dI-e3d"/>
                             <constraint firstItem="6bS-u8-eYw" firstAttribute="centerX" secondItem="05u-N0-0xO" secondAttribute="centerX" id="6cO-V2-QpQ"/>
+                            <constraint firstItem="wgE-Zq-7qa" firstAttribute="leading" secondItem="05u-N0-0xO" secondAttribute="leadingMargin" constant="-21" id="TQy-1b-tgi"/>
+                            <constraint firstItem="pC4-fC-7Ni" firstAttribute="top" secondItem="wgE-Zq-7qa" secondAttribute="bottom" id="Vmy-YX-Ygk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gFZ-BE-yI4" secondAttribute="trailing" constant="-20" id="Xf9-mv-foI"/>
                             <constraint firstItem="gFZ-BE-yI4" firstAttribute="leading" secondItem="05u-N0-0xO" secondAttribute="leadingMargin" constant="-20" id="gqI-Ij-Ra7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wgE-Zq-7qa" secondAttribute="trailing" constant="-19" id="tgN-Pc-egf"/>
                             <constraint firstItem="6bS-u8-eYw" firstAttribute="top" secondItem="exL-Ag-kHs" secondAttribute="bottom" constant="18" id="zR7-I6-ncJ"/>
                         </constraints>
                     </view>

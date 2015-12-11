@@ -146,6 +146,9 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         taskDetailsTableView.reloadData()
     }
 
+    @IBAction func onStartingTask(sender: UIBarButtonItem) {
+        print("going to start task")
+    }
     /*
     // MARK: - Navigation
 
