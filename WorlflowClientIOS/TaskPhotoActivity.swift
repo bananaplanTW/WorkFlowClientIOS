@@ -20,10 +20,11 @@ class TaskPhotoActivity: Activity {
     }
     
     class func createTaskPhotoActivity (attributes: NSDictionary) -> Activity {
+        let secs = (attributes["createdAt"] as! Int) / 1000
         return TaskPhotoActivity(
             id:         attributes["_id"] as! String,
             ownerName:  attributes["ownerName"] as! String,
-            createdAt:  NSDate(timeIntervalSince1970: NSTimeInterval(attributes["createdAt"] as! Int)),
+            createdAt:  NSDate(timeIntervalSince1970: NSTimeInterval(secs)),
             type:       .TASK_PHOTO,
             photoPath:  attributes["imageUrl"] as! String,
             thumbPath:  attributes["thumbUrl"] as? String

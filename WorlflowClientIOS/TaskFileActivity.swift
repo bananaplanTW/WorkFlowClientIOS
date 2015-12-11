@@ -20,10 +20,11 @@ class TaskFileActivity: Activity {
     }
     
     class func createTaskFileActivity (attributes: NSDictionary) -> Activity {
+        let secs = (attributes["createdAt"] as! Int) / 1000
         return TaskFileActivity(
             id:        attributes["_id"] as! String,
             ownerName: attributes["ownerName"] as! String,
-            createdAt: NSDate(timeIntervalSince1970: NSTimeInterval(attributes["createdAt"] as! Int)),
+            createdAt: NSDate(timeIntervalSince1970: NSTimeInterval(secs)),
             type:      .TASK_FILE,
             filePath:  attributes["fileUrl"] as! String,
             fileName:  attributes["name"] as! String

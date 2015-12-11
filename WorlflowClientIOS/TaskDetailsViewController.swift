@@ -79,6 +79,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             let todo = task.todos[indexPath.row]
             let cell = tableView.dequeueReusableCellWithIdentifier("TodoTableViewCell", forIndexPath: indexPath) as! TodoTableViewCell
             cell.todoName.text = todo.name
+            cell.checkbox.on = todo.checked
             return cell
         }
 
@@ -88,17 +89,20 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         case .TASK_COMMENT:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCommentTableViewCell", forIndexPath: indexPath) as! ActivityCommentTableViewCell
             cell.employeeName.text = activity.ownerName
+            cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.comment.text = (activity as! TaskCommentActivity).comment
             return cell
 
         case .TASK_PHOTO:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
+            cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.employeeName.text = activity.ownerName
             return cell
 
         case .TASK_FILE:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
             cell.employeeName.text = activity.ownerName
+            cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.fileName.text = (activity as! TaskFileActivity).fileName
             return cell
         }

@@ -17,10 +17,11 @@ class TaskCommentActivity: Activity {
     }
     
     class func createTaskCommentActivity (attributes: NSDictionary) -> Activity {
+        let secs = (attributes["createdAt"] as! Int) / 1000
         return TaskCommentActivity(
             id:        attributes["_id"] as! String,
             ownerName: attributes["ownerName"] as! String,
-            createdAt: NSDate(timeIntervalSince1970: NSTimeInterval(attributes["createdAt"] as! Int)),
+            createdAt: NSDate(timeIntervalSince1970: NSTimeInterval(secs)),
             type:      .TASK_COMMENT,
             comment:   attributes["content"] as! String
         )
