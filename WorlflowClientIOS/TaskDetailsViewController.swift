@@ -25,7 +25,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return 4;
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -33,8 +33,10 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             return 85
         } else if indexPath.row == 1 {
             return 240
-        } else {
+        } else if indexPath.row == 2 {
             return 85
+        } else {
+            return 50
         }
     }
     
@@ -51,9 +53,13 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
             cell.employeeName.text = "DANNY"
             return cell
-        } else {
+        } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
             cell.employeeName.text = "DANNY"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("TodoTableViewCell", forIndexPath: indexPath) as! TodoTableViewCell
+            cell.todoName.text = "todo ohhhhh"
             return cell
         }
         
