@@ -9,7 +9,10 @@
 import UIKit
 
 class EmployeeSendMessageViewController: UIViewController {
-
+    
+    var taskId: String!
+    
+    @IBOutlet weak var messageBox: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +28,10 @@ class EmployeeSendMessageViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func onSendingMessage(sender: UIButton) {
+        print("going to send message: " + messageBox.text, taskId)
+        PostAPI.sendAMessageToTask(messageBox.text, taskId: taskId)
+    }
     /*
     // MARK: - Navigation
 

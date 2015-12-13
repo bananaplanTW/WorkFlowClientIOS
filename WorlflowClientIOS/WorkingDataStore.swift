@@ -26,8 +26,8 @@ class WorkingDataStore {
 
     private var wipTask: Task?
     private var scheduledTaskList: Array<Task> = []
-    private var authToken:String = "adjzyrbxHsyGZeaQV2kvq2SOWS71HlYFF5K1YOwi-b9"
-    private var userId: String = "QNXpzjCQhiqYpGJdD"
+    private var authToken:String = "Vx-i8Cgxdr5Mk_-mdL0HXJC9dkXfj50-vWO9oA3gEtv"
+    private var userId: String = "pwcfTg448eeGafZWY"
     
     
     func getUserId () -> String {

@@ -533,7 +533,7 @@
                     <navigationItem key="navigationItem" title="Title" id="3q3-Co-gxc">
                         <barButtonItem key="rightBarButtonItem" title="Comment" id="qyb-ws-tpC">
                             <connections>
-                                <segue destination="Xf8-1o-ZZ2" kind="presentation" id="yeD-46-Mxf"/>
+                                <segue destination="Xf8-1o-ZZ2" kind="presentation" identifier="segueSendMessage" id="yeD-46-Mxf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -577,6 +577,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-20-Hcp">
                                 <rect key="frame" x="542" y="550" width="30" height="30"/>
                                 <state key="normal" title="發文"/>
+                                <connections>
+                                    <action selector="onSendingMessage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="5LQ-p2-ffD"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="something" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-Ra-bQE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="449"/>
@@ -608,6 +611,9 @@
                             <constraint firstItem="ztr-dV-Ihv" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-20" id="wda-jW-kxf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageBox" destination="xmh-Ra-bQE" id="hAM-Nx-jNT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-p0-OhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
