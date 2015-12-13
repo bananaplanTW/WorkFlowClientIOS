@@ -283,7 +283,7 @@
                                 <rect key="frame" x="0.0" y="128" width="600" height="428"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCommentTableViewCell" rowHeight="86" id="p4U-rd-o13" customClass="ActivityCommentTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityCommentTableViewCell" rowHeight="86" id="p4U-rd-o13" customClass="ActivityCommentTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p4U-rd-o13" id="W5c-KY-wau">
@@ -337,7 +337,7 @@
                                             <outlet property="time" destination="cie-3x-UT3" id="ptL-3m-iU1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoTableViewCell" rowHeight="50" id="MuU-WL-0jA" customClass="TodoTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodoTableViewCell" rowHeight="50" id="MuU-WL-0jA" customClass="TodoTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MuU-WL-0jA" id="5ja-VV-P4S">
@@ -372,7 +372,7 @@
                                             <outlet property="todoName" destination="Ei1-95-RLo" id="1Mr-eZ-KYq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityFileTableViewCell" id="whm-Vv-hNk" customClass="ActivityFileTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityFileTableViewCell" id="whm-Vv-hNk" customClass="ActivityFileTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="164" width="600" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="whm-Vv-hNk" id="Vs1-z7-wts">
@@ -444,7 +444,7 @@
                                             <outlet property="time" destination="TAf-Sz-rLs" id="IHa-4g-0F6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityPhotoTableViewCell" rowHeight="240" id="N1d-Tc-3Vc" customClass="ActivityPhotoTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityPhotoTableViewCell" rowHeight="240" id="N1d-Tc-3Vc" customClass="ActivityPhotoTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="250" width="600" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1d-Tc-3Vc" id="xl1-5l-05p">
