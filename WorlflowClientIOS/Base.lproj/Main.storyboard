@@ -570,46 +570,70 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-au-F0e">
-                                <rect key="frame" x="28" y="550" width="30" height="30"/>
-                                <state key="normal" title="照片"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-20-Hcp">
-                                <rect key="frame" x="542" y="550" width="30" height="30"/>
+                                <rect key="frame" x="500" y="552" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="FR4-iR-h16"/>
+                                    <constraint firstAttribute="height" constant="40" id="tnd-rl-8QE"/>
+                                </constraints>
                                 <state key="normal" title="發文"/>
                                 <connections>
                                     <action selector="onSendingMessage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="5LQ-p2-ffD"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="something" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-Ra-bQE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="449"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-Ra-bQE">
+                                <rect key="frame" x="8" y="64" width="584" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市東區" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTB-8b-dmE">
-                                <rect key="frame" x="20" y="521" width="85" height="20.5"/>
+                                <rect key="frame" x="20" y="526.5" width="85" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-au-F0e">
+                                <rect key="frame" x="20" y="552" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="D2f-Uc-e57"/>
+                                    <constraint firstAttribute="height" constant="40" id="DDp-hg-wp5"/>
+                                </constraints>
+                                <state key="normal" title="照片"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="PJ6-au-F0e" secondAttribute="leading" id="0eE-U9-7nP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ztr-dV-Ihv" secondAttribute="trailing" constant="-20" id="5BM-8a-02l"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HTB-8b-dmE" secondAttribute="leading" id="A0V-ue-dco"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="20" id="FT4-ib-Vzh"/>
-                            <constraint firstItem="xmh-Ra-bQE" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-20" id="KMK-Kk-wuP"/>
+                            <constraint firstItem="xmh-Ra-bQE" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-12" id="KMK-Kk-wuP"/>
+                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="8" id="KUr-nj-TTR"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="20" id="P1w-cw-aP4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" constant="8" id="Q5w-LN-Usg"/>
                             <constraint firstItem="PJ6-au-F0e" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="8" id="UyC-W3-b6e"/>
                             <constraint firstItem="xmh-Ra-bQE" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" constant="44" id="c0K-lx-BTT"/>
                             <constraint firstItem="HTB-8b-dmE" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="8" id="fAh-6x-Ye2"/>
                             <constraint firstItem="ztr-dV-Ihv" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" id="hC6-Vf-cDW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xmh-Ra-bQE" secondAttribute="trailing" constant="-20" id="nzH-ZI-7mp"/>
-                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="87" id="vsS-K1-U1u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" id="jxr-Ln-dne"/>
+                            <constraint firstItem="PJ6-au-F0e" firstAttribute="top" secondItem="HTB-8b-dmE" secondAttribute="bottom" constant="5" id="kgw-QZ-MKq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xmh-Ra-bQE" secondAttribute="trailing" constant="-12" id="nzH-ZI-7mp"/>
+                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="8" id="ud7-yr-lNu"/>
+                            <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="100" id="vsS-K1-U1u"/>
                             <constraint firstItem="ztr-dV-Ihv" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-20" id="wda-jW-kxf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PJ6-au-F0e" secondAttribute="trailing" constant="480" id="zCe-6o-Vdn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fAh-6x-Ye2"/>
+                                <exclude reference="UyC-W3-b6e"/>
+                                <exclude reference="zCe-6o-Vdn"/>
+                                <exclude reference="FT4-ib-Vzh"/>
+                                <exclude reference="P1w-cw-aP4"/>
+                                <exclude reference="Q5w-LN-Usg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="messageBox" destination="xmh-Ra-bQE" id="hAM-Nx-jNT"/>
