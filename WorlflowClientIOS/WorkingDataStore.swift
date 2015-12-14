@@ -15,17 +15,25 @@ class WorkingDataStore {
         }
         return Static.instance
     }
+    
+    static let ACTION_LOAD_EMPLOYEE_COMPLETE = "actionLoadEmployeeComplete"
+    static let ACTION_LOAD_EMPLOYEE_ICON_COMPLETE = "actionLoadEmployeeIconComplete"
+    static let ACTION_LOAD_EMPLOYEE_FAIL = "actionLoadEmployeeFail"
+    static let ACTION_SHOULD_RELOAD_EMPLOYEE = "actionShouldReloadEmployee"
+    static let ACTION_SHOULD_RELOAD_EMPLOYEE_ICON = "actionShouldReloadEmployeeIcon"
+    static let ACTION_CANCEL_RELOAD_TASKS = "actionCancelReloadEmployee"
 
     static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
     static let ACTION_LOAD_EMPLOYEE_TASKS_FAIL = "actionLoadEmployeeTasksFail"
-    
-    static let ACTION_UPDATE_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
-    static let ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS = "actionCancelUpdateEmployeeTasks"
+    static let ACTION_SHOULD_RELOAD_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
+    static let ACTION_CANCEL_RELOAD_EMPLOYEE_TASKS = "actionCancelUpdateEmployeeTasks"
     
     private init() {}
 
     private var wipTask: Task?
     private var scheduledTaskList: Array<Task> = []
+
+    private var employee: Employee?
     private var authToken:String = "Vx-i8Cgxdr5Mk_-mdL0HXJC9dkXfj50-vWO9oA3gEtv"
     private var userId: String = "pwcfTg448eeGafZWY"
     
@@ -35,6 +43,9 @@ class WorkingDataStore {
     }
     func getAuthToken () -> String {
         return authToken
+    }
+    func getEmployee () -> Employee? {
+        return employee
     }
     
     
@@ -54,7 +65,6 @@ class WorkingDataStore {
 
     
     func syncTasks () {
-        // sync task data from server
         let headers:Dictionary = [
             "x-auth-token": authToken,
             "x-user-id": userId
@@ -71,8 +81,7 @@ class WorkingDataStore {
                 do {
 
                     parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    print(parsedData)
-                    
+
                     if let response = parsedData as? NSDictionary {
                         if response["status"] as! String == "success" {
                             self.parsePersonalTasks(response["result"] as! NSDictionary)
@@ -91,8 +100,6 @@ class WorkingDataStore {
             }
         }
     }
-    
-    
     private func parsePersonalTasks (parsedData: NSDictionary) {
         wipTask = nil
         if let _wipTask = parsedData["WIPTask"] as? NSDictionary {
@@ -108,6 +115,43 @@ class WorkingDataStore {
         print("tasks")
         print(wipTask)
         print(scheduledTaskList)
+    }
+    
+    
+    func syncSelf () {
+        let headers:Dictionary = [
+            "x-auth-token": authToken,
+            "x-user-id": userId
+        ]
+        
+        let urlString: String = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.SELF, queries: nil)
+
+        RestfulUtils.get(urlString, headers: headers) {
+            (response: NSURLResponse!, data: NSData?, error: NSError!) -> Void in
+            if error == nil && data != nil {
+                let parsedData: AnyObject?
+                do {
+                    parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                    if let response = parsedData as? NSDictionary {
+                        if response["status"] as! String == "success" {
+                            self.parseSelfData(response["result"] as! NSDictionary)
+                        }
+                    }
+                    
+                } catch {
+                    parsedData = nil
+                }
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_COMPLETE, object: nil)
+                
+            } else {
+                print(error)
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_FAIL, object: nil)
+            }
+        }
+    }
+    private func parseSelfData (parsedData: NSDictionary) {
+        employee = Employee.createEmployee(parsedData)
     }
 
 }

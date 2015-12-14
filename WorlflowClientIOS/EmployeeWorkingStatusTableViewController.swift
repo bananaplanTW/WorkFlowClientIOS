@@ -10,8 +10,12 @@ import UIKit
 
 class EmployeeWorkingStatusTableViewController: UITableViewController {
 
+    var employee: Employee?
     var wipTask: Task?
     var scheduletTaskList: Array<Task>!
+
+    @IBOutlet weak var employeeName: UILabel!
+    @IBOutlet weak var employeeIcon: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +27,53 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
         registerNotificationObservers()
-        initViews()
         initData()
+        initViews()
     }
     
     func registerNotificationObservers () {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEndRefreshing", name: WorkingDataStore.ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS, object: nil)
-    }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeUpdated", name: WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeIconUpdated", name: WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_ICON, object: nil)
 
-    func initViews () {
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "onRefreshingTaskData", forControlEvents: UIControlEvents.ValueChanged)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskDataUpdated", name: WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_TASKS, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEndRefreshing", name: WorkingDataStore.ACTION_CANCEL_RELOAD_EMPLOYEE_TASKS, object: nil)
     }
     func initData () {
+        employee = WorkingDataStore.sharedInstance().getEmployee()
+        
         wipTask = WorkingDataStore.sharedInstance().getWipTask()
         scheduletTaskList = WorkingDataStore.sharedInstance().getScheduledTaskList()
     }
+    func initViews () {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "syncTaskData", forControlEvents: UIControlEvents.ValueChanged)
 
-    func onRefreshingTaskData () {
+        self.navigationController?.setToolbarHidden(false, animated: false)
+
+        if employee != nil {
+            employeeName.text = employee!.name
+            employeeIcon.image = employee!.thumb
+        }
+    }
+    
+
+
+    func onEmployeeUpdated () {
+        if let _employee = WorkingDataStore.sharedInstance().getEmployee() {
+            employee = _employee
+            employeeName.text = _employee.name
+            syncTaskData()
+        }
+    }
+    func onEmployeeIconUpdated () {
+        employeeIcon.image = employee!.thumb
+    }
+
+
+    func syncTaskData () {
         WorkingDataStore.sharedInstance().syncTasks()
     }
+
 
     func onTaskDataUpdated () {
         wipTask = WorkingDataStore.sharedInstance().getWipTask()
@@ -135,6 +165,9 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         return sectionView
     }
 
+    @IBAction func onCheckingIn(sender: UIBarButtonItem) {
+        print("打卡摟")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

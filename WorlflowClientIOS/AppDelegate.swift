@@ -14,23 +14,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadTaskActivities", name: TaskActivityDataStore.ACTION_LOAD_TASK_ACTIVITIES_COMPLETE, object: nil)
+        registerNotificaitons()
+        initializeActions()
         return true
     }
     
+    func initializeActions () {
+        WorkingDataStore.sharedInstance().syncSelf()
+    }
+    
+    func registerNotificaitons () {
+        // register loading self events
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployee", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployee", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_FAIL, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeIcon", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_ICON_COMPLETE, object: nil)
+        
+        // register loading task events
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
+
+        // register loading task activity events
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadTaskActivities", name: TaskActivityDataStore.ACTION_LOAD_TASK_ACTIVITIES_COMPLETE, object: nil)
+    }
+
+    // delegates of loading employee
+    func onDidLoadEmployee () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
+    }
+    func onFailLoadingEmployee () {
+    }
+    func onDidLoadEmployeeIcon () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_ICON, object: nil)
+    }
+
+    // delegates of loading tasks
     func onDidLoadEmployeeTasks () {
-        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_UPDATE_EMPLOYEE_TASKS, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_TASKS, object: nil)
     }
     func onFailLoadingEmployeeTasks () {
-        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_CANCEL_UPDATE_EMPLOYEE_TASKS, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_CANCEL_RELOAD_EMPLOYEE_TASKS, object: nil)
     }
+
+    // delegates of loading task activities
     func onDidLoadTaskActivities () {
         NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_UPDATE_TASK_ACTIVITIES, object: nil)
     }

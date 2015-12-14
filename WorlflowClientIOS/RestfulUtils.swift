@@ -10,8 +10,8 @@ import Foundation
 
 class RestfulUtils {
     class func get (urlString: String, headers: Dictionary<String, String>, backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
-
-        let urlRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        let encodedUrlString:String = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let urlRequest = NSMutableURLRequest(URL: NSURL(string: encodedUrlString)!)
         for (key, value) in headers {
             urlRequest.addValue(value, forHTTPHeaderField: key)
         }
@@ -32,8 +32,8 @@ class RestfulUtils {
 
 
     class func post (urlString: String, headers: Dictionary<String, String>, body: Dictionary<String, String>, backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
-        
-        let urlRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        let encodedUrlString:String = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let urlRequest = NSMutableURLRequest(URL: NSURL(string: encodedUrlString)!)
         for (key, value) in headers {
             urlRequest.addValue(value, forHTTPHeaderField: key)
         }

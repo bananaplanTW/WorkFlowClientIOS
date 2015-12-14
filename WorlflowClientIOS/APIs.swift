@@ -14,5 +14,6 @@ class APIs {
         static let EMPLOYEE_TASKS = "/api/employee/tasks"
         static let TASK_ACTIVITIES = "/api/task/activities"
         static let ADD_TEXT_TASK_ACTIVITY = "/api/add-task-activity/text"
+        static let SELF = "/api/self"
     }
 }

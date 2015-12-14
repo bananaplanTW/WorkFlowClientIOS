@@ -158,29 +158,46 @@
                             <outlet property="delegate" destination="D3i-jo-tCx" id="uyC-0T-e8g"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="4Uc-bu-Cjb"/>
+                        <barButtonItem title="打卡上下班" id="YTa-J5-wHd">
+                            <connections>
+                                <action selector="onCheckingIn:" destination="D3i-jo-tCx" id="xrc-XV-irN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7gt-ZK-c7a"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="CdK-UL-0cr">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="MfS-2l-B2V">
-                            <view key="customView" contentMode="scaleToFill" id="Dss-dL-EkB">
+                            <view key="customView" alpha="0.0" contentMode="scaleToFill" id="Dss-dL-EkB">
                                 <rect key="frame" x="20" y="5" width="133" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZNM-dr-BHv">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZNM-dr-BHv">
                                         <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Danny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsd-vR-iLf">
-                                        <rect key="frame" x="41" y="6" width="49" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsd-vR-iLf">
+                                        <rect key="frame" x="37" y="8" width="92" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Danny">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="登出" id="X3O-68-6Hn"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="employeeIcon" destination="ZNM-dr-BHv" id="nby-x1-23h"/>
+                        <outlet property="employeeName" destination="Xsd-vR-iLf" id="1JE-Ky-HnN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X31-ex-CzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuO-0z-iET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="1979"/>
+            <point key="canvasLocation" x="1457" y="1973"/>
         </scene>
         <!--Title-->
         <scene sceneID="fzf-an-MR9">
