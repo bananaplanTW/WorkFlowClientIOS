@@ -170,7 +170,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         if employee != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let employeeCheckInOutPromptViewController = storyboard.instantiateViewControllerWithIdentifier("EmployeeCheckInOutPromptViewController") as! EmployeeCheckInOutPromptViewController
-            employeeCheckInOutPromptViewController.employee = employee!
 
             self.presentViewController(employeeCheckInOutPromptViewController, animated: true, completion: nil)
         }

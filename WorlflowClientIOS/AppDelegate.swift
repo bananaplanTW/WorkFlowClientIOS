@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployee", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_FAIL, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeIcon", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_ICON_COMPLETE, object: nil)
         
+        // register check in/out events
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeCheckInOut", name: WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
+        
         // register loading task events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_FAIL, object: nil)
@@ -48,6 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func onDidLoadEmployeeIcon () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_ICON, object: nil)
+    }
+    func onEmployeeCheckInOut () {
+        WorkingDataStore.sharedInstance().syncSelf()
     }
 
     // delegates of loading tasks

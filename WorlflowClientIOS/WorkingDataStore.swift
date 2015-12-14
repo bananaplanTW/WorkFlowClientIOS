@@ -23,6 +23,8 @@ class WorkingDataStore {
     static let ACTION_SHOULD_RELOAD_EMPLOYEE_ICON = "actionShouldReloadEmployeeIcon"
     static let ACTION_CANCEL_RELOAD_TASKS = "actionCancelReloadEmployee"
 
+    static let ACTION_EMPLOYEE_CHECK_IN_OUT = "actionEmployeeCheckInOut"
+
     static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
     static let ACTION_LOAD_EMPLOYEE_TASKS_FAIL = "actionLoadEmployeeTasksFail"
     static let ACTION_SHOULD_RELOAD_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"

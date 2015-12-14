@@ -33,4 +33,25 @@ class PostAPI {
             }
         }
     }
+    class func checkInOut () {
+        let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.CHECK_IN_OUT, queries: nil)
+        let headers:Dictionary = [
+            "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
+            "x-user-id": WorkingDataStore.sharedInstance().getUserId(),
+        ]
+        let body: Dictionary = [String: String]()
+
+
+        RestfulUtils.post(urlString, headers: headers, body: body) {
+            (response: NSURLResponse?, data: NSData?, errors: NSError?) in
+            // should notify system
+            if errors != nil {
+                print("something wrong")
+                print(errors)
+                return
+            } else {
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
+            }
+        }
+    }
 }

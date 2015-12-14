@@ -322,6 +322,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="打卡上班"/>
                                         <connections>
+                                            <action selector="checkInOut:" destination="Ce8-2F-RgR" eventType="touchUpInside" id="lBt-TJ-y3Q"/>
                                             <action selector="onShowingTaskDetails:" destination="dHk-U1-cGs" eventType="touchUpInside" id="nwc-fG-wto"/>
                                         </connections>
                                     </button>

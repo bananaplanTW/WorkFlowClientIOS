@@ -21,7 +21,8 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        registerNotificationObservers()
+        initData()
         initViews()
         initGestures()
     }
@@ -30,14 +31,30 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
+    func registerNotificationObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeUpdated", name: WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
+    }
+    func onEmployeeUpdated() {
+        employee = WorkingDataStore.sharedInstance().getEmployee()
+        renderActions()
+    }
+
+
+    func initData () {
+        employee = WorkingDataStore.sharedInstance().getEmployee()
+    }
+
+
     func initViews () {
         promptContainer.layer.borderWidth = 1
         promptContainer.layer.borderColor = UIColor.grayColor().CGColor
         promptContainer.layer.cornerRadius = 10
 
-
+        renderActions()
+    }
+    func renderActions () {
         switch employee.status {
         case .STOP, .OFF:
             checkInTime.text = "尚未上班"
@@ -71,6 +88,9 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func checkInOut(sender: UIButton) {
+        PostAPI.checkInOut()
+    }
 
     /*
     // MARK: - Navigation
