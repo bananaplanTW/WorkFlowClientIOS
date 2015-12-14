@@ -272,6 +272,92 @@
             </objects>
             <point key="canvasLocation" x="1457" y="1973"/>
         </scene>
+        <!--Employee Check In Out Prompt View Controller-->
+        <scene sceneID="GJ7-sc-EJP">
+            <objects>
+                <viewController storyboardIdentifier="EmployeeCheckInOutPromptViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ce8-2F-RgR" customClass="EmployeeCheckInOutPromptViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jFG-Aw-Plo"/>
+                        <viewControllerLayoutGuide type="bottom" id="thK-zf-RXi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="upN-09-Xs2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hj7-So-8Sq">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下班時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d20-9y-vZP">
+                                        <rect key="frame" x="200" y="65" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上班時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyx-qU-K1G">
+                                        <rect key="frame" x="41" y="65" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="07:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-yf-4kv">
+                                        <rect key="frame" x="8" y="103" width="134" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尚未下班" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-BI-Xoo">
+                                        <rect key="frame" x="177" y="103" width="115" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="台北市中山區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no5-KX-8hc">
+                                        <rect key="frame" x="8" y="217" width="284" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hE-FJ-fjx">
+                                        <rect key="frame" x="93" y="179" width="114" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="打卡上班"/>
+                                        <connections>
+                                            <action selector="onShowingTaskDetails:" destination="dHk-U1-cGs" eventType="touchUpInside" id="nwc-fG-wto"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-TG-Evd">
+                                        <rect key="frame" x="141" y="103" width="19" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Can-Oa-gMo"/>
+                                    <constraint firstAttribute="height" constant="300" id="dUL-jz-pnq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80052787162162165" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hj7-So-8Sq" firstAttribute="centerY" secondItem="upN-09-Xs2" secondAttribute="centerY" id="ID4-YM-dLm"/>
+                            <constraint firstItem="Hj7-So-8Sq" firstAttribute="centerX" secondItem="upN-09-Xs2" secondAttribute="centerX" id="czy-BL-fZc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="background" destination="upN-09-Xs2" id="kef-Kg-88o"/>
+                        <outlet property="checkInOutButton" destination="4hE-FJ-fjx" id="Hm9-Wm-ZjQ"/>
+                        <outlet property="checkInTime" destination="qpe-yf-4kv" id="ECu-Ec-7Ul"/>
+                        <outlet property="checkOutTime" destination="FAJ-BI-Xoo" id="SR0-6f-t54"/>
+                        <outlet property="location" destination="no5-KX-8hc" id="B6L-4S-33R"/>
+                        <outlet property="promptContainer" destination="Hj7-So-8Sq" id="7fd-na-mOJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7b-0d-sUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134" y="1973"/>
+        </scene>
         <!--Title-->
         <scene sceneID="fzf-an-MR9">
             <objects>

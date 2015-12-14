@@ -166,7 +166,14 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     }
 
     @IBAction func onCheckingIn(sender: UIBarButtonItem) {
-        print("打卡摟")
+
+        if employee != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let employeeCheckInOutPromptViewController = storyboard.instantiateViewControllerWithIdentifier("EmployeeCheckInOutPromptViewController") as! EmployeeCheckInOutPromptViewController
+            employeeCheckInOutPromptViewController.employee = employee!
+
+            self.presentViewController(employeeCheckInOutPromptViewController, animated: true, completion: nil)
+        }
     }
     /*
     // Override to support conditional editing of the table view.

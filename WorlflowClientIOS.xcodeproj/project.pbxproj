@@ -39,6 +39,8 @@
 		67F42ECF1C1D522500F18EA9 /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ECE1C1D522500F18EA9 /* GetAPI.swift */; };
 		67F42ED21C1EF9C100F18EA9 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ED11C1EF9C100F18EA9 /* Employee.swift */; };
 		67F42ED41C1EF9D200F18EA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ED31C1EF9D200F18EA9 /* User.swift */; };
+		67F42ED71C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ED61C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift */; };
+		67F42ED91C1F0E1300F18EA9 /* Timecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ED81C1F0E1300F18EA9 /* Timecard.swift */; };
 		67FA37971C198E2500D992CC /* WorkingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37961C198E2500D992CC /* WorkingDataStore.swift */; };
 		67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */; };
 		67FA379C1C1998F800D992CC /* RestfulUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379B1C1998F800D992CC /* RestfulUtils.swift */; };
@@ -102,6 +104,8 @@
 		67F42ECE1C1D522500F18EA9 /* GetAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAPI.swift; sourceTree = "<group>"; };
 		67F42ED11C1EF9C100F18EA9 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		67F42ED31C1EF9D200F18EA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		67F42ED61C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCheckInOutViewController.swift; sourceTree = "<group>"; };
+		67F42ED81C1F0E1300F18EA9 /* Timecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timecard.swift; sourceTree = "<group>"; };
 		67FA37961C198E2500D992CC /* WorkingDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDataStore.swift; sourceTree = "<group>"; };
 		67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeePendingTableViewCell.swift; sourceTree = "<group>"; };
 		67FA379B1C1998F800D992CC /* RestfulUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestfulUtils.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				677F78E91C1952F8001DFD0E /* EmployeeSendMessageViewController.swift */,
 				677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */,
 				678F68D21C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift */,
+				67F42ED61C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				674D05711C183A360011238C /* Task.swift */,
 				678F68D01C1AA728002CAAF8 /* Todo.swift */,
 				678F68CC1C1A9225002CAAF8 /* APIs.swift */,
+				67F42ED81C1F0E1300F18EA9 /* Timecard.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -538,6 +544,8 @@
 				678F68C71C1A8281002CAAF8 /* TaskFileActivity.swift in Sources */,
 				674D05721C183A360011238C /* Task.swift in Sources */,
 				678F68CD1C1A9225002CAAF8 /* APIs.swift in Sources */,
+				67F42ED71C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift in Sources */,
+				67F42ED91C1F0E1300F18EA9 /* Timecard.swift in Sources */,
 				678F68BE1C1A7DB8002CAAF8 /* TaskActivityDataStore.swift in Sources */,
 				678F68D31C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift in Sources */,
 				67F42ECF1C1D522500F18EA9 /* GetAPI.swift in Sources */,

@@ -18,6 +18,7 @@ enum WorkingStatus: String {
 
 class Employee: User {
     let status: WorkingStatus
+    var timecard: Timecard?
     var thumb: UIImage?
 
     init (id: String, name: String, iconPath: String?, status: WorkingStatus) {
@@ -44,6 +45,9 @@ class Employee: User {
             iconPath: attributes["iconThumbUrl"] as? String,
             status: WorkingStatus.init(rawValue: attributes["status"] as! String)!
         )
+        if let timecardAttr:NSDictionary = attributes["timecard"] as? NSDictionary {
+            employee.timecard = Timecard.createTimecard(timecardAttr)
+        }
         return employee
     }
 }
