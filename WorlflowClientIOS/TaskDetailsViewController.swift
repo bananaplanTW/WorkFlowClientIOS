@@ -111,6 +111,11 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
             cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.employeeName.text = activity.ownerName
+            
+            if let thumb = (activity as! TaskPhotoActivity).thumb {
+                cell.photo.image = thumb
+            }
+            
             return cell
 
         case .TASK_FILE:

@@ -21,7 +21,16 @@ class RestfulUtils {
                 backward(response, data, errors)
         }
     }
-    
+    class func getDataFromUrl(urlString:String, backward: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
+        let encodedUrlString:String = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let url = NSURL(string: encodedUrlString)!
+
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            backward(data: data, response: response, error: error)
+        }.resume()
+    }
+
+
     class func post (urlString: String, headers: Dictionary<String, String>, body: Dictionary<String, String>, backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
         
         let urlRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
