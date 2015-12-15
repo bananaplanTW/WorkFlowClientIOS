@@ -703,13 +703,27 @@
                                     <action selector="onSendingImage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="fBz-vu-YOa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-sG-w4B">
+                                <rect key="frame" x="108" y="552" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XWw-jX-ofv"/>
+                                    <constraint firstAttribute="width" constant="80" id="v0f-yG-7nj"/>
+                                </constraints>
+                                <state key="normal" title="相簿"/>
+                                <connections>
+                                    <action selector="onPickingImageFromAlbum:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="H6r-7M-Kht"/>
+                                    <action selector="onSendingImage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="Vcz-4x-1cR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="PJ6-au-F0e" secondAttribute="leading" id="0eE-U9-7nP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ztr-dV-Ihv" secondAttribute="trailing" constant="-20" id="5BM-8a-02l"/>
+                            <constraint firstItem="mDb-sG-w4B" firstAttribute="top" secondItem="HTB-8b-dmE" secondAttribute="bottom" constant="5" id="7XN-I6-g1y"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HTB-8b-dmE" secondAttribute="leading" id="A0V-ue-dco"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="20" id="FT4-ib-Vzh"/>
+                            <constraint firstItem="mDb-sG-w4B" firstAttribute="leading" secondItem="PJ6-au-F0e" secondAttribute="trailing" constant="8" id="HSw-a3-m3q"/>
                             <constraint firstItem="xmh-Ra-bQE" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-12" id="KMK-Kk-wuP"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="8" id="KUr-nj-TTR"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="20" id="P1w-cw-aP4"/>

@@ -46,6 +46,7 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+
     @IBAction func onSendingMessage(sender: UIButton) {
         PostAPI.sendAMessageToTask(messageBox.text, taskId: taskId)
         TaskActivityDataStore.sharedInstance().addTaskCommentActivityToTask(taskId, comment: messageBox.text, ownerName: employee.name, iconThumb: employee.thumb)
@@ -54,6 +55,8 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         self.view.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
         initMessageBox()
     }
+
+
     @IBAction func onSendingImage(sender: AnyObject) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -62,15 +65,27 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         
         presentViewController(image, animated: true, completion: nil)
     }
-    
+
+
+    @IBAction func onPickingImageFromAlbum(sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = false
+
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         dismissViewControllerAnimated(true, completion: nil)
         let date = NSDate()
         let imageName = String(Int(date.timeIntervalSince1970)) + ".jpg"
-        
+
         PostAPI.sendAnImageToTask(ImageUtils.correctlyOrientedImage(image), imageName: imageName, taskId: taskId)
     }
-    
+
+
     func keyboardWillBeShown (notification : NSNotification) {
         let info = notification.userInfo
         let endSize = (info![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -81,7 +96,6 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         typingMessageBox()
     }
 
-    
     func initMessageBox () {
         messageBox.text = "Leave Messages"
         messageBox.textColor = UIColor.grayColor()
