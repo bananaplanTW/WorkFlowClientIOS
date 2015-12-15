@@ -50,6 +50,5 @@ class RestfulUtils {
         } catch {
             backward(NSURLResponse(), nil, NSError(domain: "NSJSONSerialization error", code: 401, userInfo: nil))
         }
-        
     }
 }

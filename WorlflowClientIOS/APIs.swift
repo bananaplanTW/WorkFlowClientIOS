@@ -9,7 +9,7 @@
 import Foundation
 
 class APIs {
-    static let BASE_URL:String = "http://192.168.1.102:3000"
+    static let BASE_URL:String = "http://10.1.1.61:3000"
     class END_POINTS {
         static let EMPLOYEE_TASKS = "/api/employee/tasks"
         static let TASK_ACTIVITIES = "/api/task/activities"
