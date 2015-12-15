@@ -8,23 +8,38 @@
 
 import Foundation
 
+enum TaskStatusType: String {
+    case UNCLAIMED = "unclaimed"
+    case PENDING = "pending"
+    case WIP = "wip"
+    case EXCEPTION = "exception"
+    case PAUSE = "pause"
+    case STOP = "stop"
+    case DONE = "done"
+    case CANCEL = "cancel"
+    case INREVIEW = "inreview"
+}
+
 class Task {
     let id:String
     let name: String
     let caseName: String
+    var status: TaskStatusType
     var todos: Array<Todo> = []
     
-    init (id:String, name: String, caseName: String){
-        self.id = id;
-        self.name = name;
-        self.caseName = caseName;
+    init (id:String, name: String, caseName: String, status: TaskStatusType){
+        self.id = id
+        self.name = name
+        self.caseName = caseName
+        self.status = status
     }
 
     class func createTask (attributes: NSDictionary) -> Task {
         let task = Task(
             id: attributes["_id"] as! String,
             name: attributes["name"] as! String,
-            caseName: attributes["caseName"] as! String
+            caseName: attributes["caseName"] as! String,
+            status: TaskStatusType(rawValue: attributes["status"] as! String)!
         )
 
         var todos: Array<Todo> = []

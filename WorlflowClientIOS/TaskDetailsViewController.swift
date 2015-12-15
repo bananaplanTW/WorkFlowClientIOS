@@ -47,6 +47,12 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     func initViews () {
         taskDetailsTableView.tableFooterView = UIView(frame: CGRectZero)
         topBar.title = task.name
+        
+        if task.status == .WIP {
+            self.navigationController?.toolbarHidden = true
+        } else {
+            self.navigationController?.toolbarHidden = false
+        }
     }
 
     func onTaskActivityDataUpdated () {
@@ -151,8 +157,10 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         taskDetailsTableView.reloadData()
     }
 
-    @IBAction func onStartingTask(sender: UIBarButtonItem) {
-        print("going to start task")
+    @IBAction func onShiftTask(sender: UIBarButtonItem) {
+        PostAPI.shiftTask(taskId)
+        task.status = .WIP
+        self.navigationController?.toolbarHidden = true
     }
 
     

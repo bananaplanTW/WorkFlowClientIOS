@@ -29,7 +29,9 @@ class WorkingDataStore {
     static let ACTION_LOAD_EMPLOYEE_TASKS_FAIL = "actionLoadEmployeeTasksFail"
     static let ACTION_SHOULD_RELOAD_EMPLOYEE_TASKS = "actionUpdateEmployeeTasks"
     static let ACTION_CANCEL_RELOAD_EMPLOYEE_TASKS = "actionCancelUpdateEmployeeTasks"
-    
+
+    static let ACTION_SHIFTED_TASK = "actionShiftedTask"
+
     private init() {}
 
     private var wipTask: Task?

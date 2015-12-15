@@ -16,5 +16,6 @@ class APIs {
         static let ADD_TEXT_TASK_ACTIVITY = "/api/add-task-activity/text"
         static let SELF = "/api/self"
         static let CHECK_IN_OUT = "/api/checkin-out/employee"
+        static let SHIFT_TASK = "/api/v2/shift-task"
     }
 }
