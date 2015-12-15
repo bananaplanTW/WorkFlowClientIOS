@@ -14,10 +14,13 @@ class EmployeeCurrentTaskTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var caseName: UILabel!
+    @IBOutlet weak var suspendButton: UIButton!
+    @IBOutlet weak var completeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initViews()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,6 +28,16 @@ class EmployeeCurrentTaskTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+
+    func initViews () {
+        suspendButton.layer.borderWidth = 1
+        suspendButton.layer.borderColor = UIColor.grayColor().CGColor
+
+        completeButton.layer.borderWidth = 1
+        completeButton.layer.borderColor = UIColor.grayColor().CGColor
+    }
+
 
     @IBAction func handleSuspendTask(sender: UIButton) {
         PostAPI.suspendTask(task.id)

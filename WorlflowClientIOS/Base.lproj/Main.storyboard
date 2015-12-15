@@ -72,6 +72,8 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="caseName" destination="qKo-yd-fuP" id="kv9-fr-3Yc"/>
+                                    <outlet property="completeButton" destination="aXl-OX-TGy" id="317-Mf-odK"/>
+                                    <outlet property="suspendButton" destination="qPJ-VU-kwe" id="EA8-Tt-5mT"/>
                                     <outlet property="taskName" destination="5lU-43-ych" id="42T-ga-OA6"/>
                                     <segue destination="yhp-FO-bZa" kind="show" identifier="segueTaskDetails" id="wNA-qD-nZu"/>
                                 </connections>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		204B8B77C26160E3458891BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025712AC4B4C5758B057558D /* libPods.a */; };
+		670676CE1C1FEBB8006A0882 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670676CD1C1FEBB8006A0882 /* LocationManager.swift */; };
 		674D05391C1827F50011238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D05381C1827F50011238C /* AppDelegate.swift */; };
 		674D053B1C1827F50011238C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D053A1C1827F50011238C /* ViewController.swift */; };
 		674D053E1C1827F50011238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674D053C1C1827F50011238C /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		025712AC4B4C5758B057558D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		670676CD1C1FEBB8006A0882 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6733BCCE1C1A75190019AC64 /* WorlflowClientIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorlflowClientIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		674D05351C1827F50011238C /* WorlflowClientIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorlflowClientIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		674D05381C1827F50011238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		670676CF1C1FEBCB006A0882 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				670676CD1C1FEBB8006A0882 /* LocationManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		674D052C1C1827F50011238C = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		674D05701C183A0A0011238C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				670676CF1C1FEBCB006A0882 /* Managers */,
 				67F42EC91C1D39EA00F18EA9 /* Actions */,
 				677F78F41C198A4C001DFD0E /* Data */,
 				677F78F31C198A45001DFD0E /* Stores */,
@@ -533,6 +544,7 @@
 				678F68C51C1A81D2002CAAF8 /* TaskPhotoActivity.swift in Sources */,
 				67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */,
 				67F42ECD1C1D3C4200F18EA9 /* PostAPI.swift in Sources */,
+				670676CE1C1FEBB8006A0882 /* LocationManager.swift in Sources */,
 				678F68C01C1A7DC7002CAAF8 /* Activity.swift in Sources */,
 				677F78E81C1912DD001DFD0E /* EmployeeScheduledTaskTableViewCell.swift in Sources */,
 				678F68C21C1A801B002CAAF8 /* TaskCommentActivity.swift in Sources */,

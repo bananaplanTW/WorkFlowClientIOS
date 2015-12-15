@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class EmployeeCheckInOutPromptViewController: UIViewController {
+class EmployeeCheckInOutPromptViewController: UIViewController, CLLocationManagerDelegate {
 
     var employee: Employee!
+    var logMgr: CLLocationManager!
+    let logMgrInstance = LocationManager.sharedInstance()
 
     @IBOutlet var background: UIView!
     @IBOutlet weak var promptContainer: UIView!
@@ -25,6 +28,10 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
         initData()
         initViews()
         initGestures()
+        initLocationManager()
+    }
+    override func viewWillDisappear(animated: Bool) {
+        unloadLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +59,8 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
         promptContainer.layer.borderColor = UIColor.grayColor().CGColor
         promptContainer.layer.cornerRadius = 10
 
+        location.text = logMgrInstance.getAddress()
+
         renderActions()
     }
     func renderActions () {
@@ -72,6 +81,8 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
             break;
         }
     }
+
+
     func initGestures () {
         let promptContainerGesture = UITapGestureRecognizer(target: self, action: "onTapPromptContainer:")
         promptContainer.addGestureRecognizer(promptContainerGesture)
@@ -79,15 +90,44 @@ class EmployeeCheckInOutPromptViewController: UIViewController {
         let backgroundGesture = UITapGestureRecognizer(target: self, action: "onTapBackground:")
         background.addGestureRecognizer(backgroundGesture)
     }
-    
-    
     func onTapPromptContainer (sender: UITapGestureRecognizer) {
         // no ops
     }
     func onTapBackground (sender: UITapGestureRecognizer) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
+
+    func initLocationManager () {
+        logMgr = logMgrInstance.getLocationManager()
+        logMgr.delegate = self
+        logMgr.startUpdatingLocation()
+    }
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        CLGeocoder().reverseGeocodeLocation(location) { placemarkers, errors in
+            if errors != nil {
+                print(errors)
+                return
+            }
+            if placemarkers?.count > 0 {
+                let pm = placemarkers![0] as CLPlacemark
+                let address = self.logMgrInstance.parseAddress(pm)
+                self.logMgrInstance.setAddress(address)
+
+                self.location.text = address
+            }
+        }
+    }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("error when location when location changes", error)
+    }
+    func unloadLocationManager () {
+        logMgr.stopUpdatingLocation()
+        logMgr.delegate = nil
+    }
+
+
     @IBAction func checkInOut(sender: UIButton) {
         PostAPI.checkInOut()
     }
