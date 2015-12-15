@@ -33,13 +33,20 @@ class PostAPI {
             }
         }
     }
-    class func checkInOut () {
+    class func checkInOut (lat: Double?, lng: Double?, address: String?) {
         let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.CHECK_IN_OUT, queries: nil)
         let headers:Dictionary = [
             "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
             "x-user-id": WorkingDataStore.sharedInstance().getUserId(),
         ]
-        let body: Dictionary = [String: String]()
+        var body: Dictionary = [String: String]()
+        if lat != nil && lng != nil {
+            body["lat"] = String(lat!)
+            body["lng"] = String(lng!)
+        }
+        if address != nil {
+            body["ad"] = address!
+        }
 
 
         RestfulUtils.post(urlString, headers: headers, body: body) {

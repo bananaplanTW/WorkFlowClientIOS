@@ -37,8 +37,10 @@ class LocationManager {
 
 
     func parseAddress(placemark: CLPlacemark) -> String {
-        let administractiveArea: String = (placemark.administrativeArea != nil) ? placemark.administrativeArea! : ""
+        //let administractiveArea: String = (placemark.administrativeArea != nil) ? placemark.administrativeArea! : ""
+        let subAdministrativeArea: String = (placemark.subAdministrativeArea != nil) ? placemark.subAdministrativeArea! : ""
+        let locality: String = (placemark.locality != nil) ? placemark.locality! : ""
         let thoroughfare: String = (placemark.thoroughfare != nil) ? placemark.thoroughfare! : ""
-        return administractiveArea + thoroughfare
+        return subAdministrativeArea + locality + thoroughfare
     }
 }

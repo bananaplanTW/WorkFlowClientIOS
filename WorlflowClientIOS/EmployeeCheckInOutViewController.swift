@@ -129,7 +129,11 @@ class EmployeeCheckInOutPromptViewController: UIViewController, CLLocationManage
 
 
     @IBAction func checkInOut(sender: UIButton) {
-        PostAPI.checkInOut()
+        if let loc: CLLocation = logMgr.location {
+            PostAPI.checkInOut(loc.coordinate.latitude as Double, lng: loc.coordinate.longitude as Double, address: logMgrInstance.getAddress())
+        } else {
+            PostAPI.checkInOut(nil, lng: nil, address: nil)
+        }
     }
 
     /*

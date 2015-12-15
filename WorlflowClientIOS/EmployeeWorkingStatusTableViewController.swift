@@ -161,7 +161,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     }
 
     @IBAction func onCheckingIn(sender: UIBarButtonItem) {
-
         if employee != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let employeeCheckInOutPromptViewController = storyboard.instantiateViewControllerWithIdentifier("EmployeeCheckInOutPromptViewController") as! EmployeeCheckInOutPromptViewController
