@@ -32,6 +32,7 @@ class WorkingDataStore {
 
     static let ACTION_SHIFTED_TASK = "actionShiftedTask"
     static let ACTION_SUSPENDED_TASK = "actionSuspendedTask"
+    static let ACTION_COMPLETED_TASK = "actionCompletedTask"
 
     private init() {}
 

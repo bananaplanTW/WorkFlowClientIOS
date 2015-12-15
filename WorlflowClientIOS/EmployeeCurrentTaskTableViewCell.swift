@@ -30,6 +30,6 @@ class EmployeeCurrentTaskTableViewCell: UITableViewCell {
         PostAPI.suspendTask(task.id)
     }
     @IBAction func handleCompleteTask(sender: UIButton) {
-        print("completeTask")
+        PostAPI.completeTask(task.id)
     }
 }

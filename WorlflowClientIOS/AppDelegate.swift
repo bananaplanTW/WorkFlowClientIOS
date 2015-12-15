@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register task action events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onShiftedTask", name: WorkingDataStore.ACTION_SHIFTED_TASK, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSuspendedTask", name: WorkingDataStore.ACTION_SUSPENDED_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onCompletedTask", name: WorkingDataStore.ACTION_COMPLETED_TASK, object: nil)
 
         // register check in/out events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeCheckInOut", name: WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
@@ -60,11 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WorkingDataStore.sharedInstance().syncSelf()
     }
 
-    // delegates of started tasks
+    // delegates of task actions
     func onShiftedTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
     func onSuspendedTask () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
+    }
+    func onCompletedTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
     
@@ -80,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func onDidLoadTaskActivities () {
         NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_UPDATE_TASK_ACTIVITIES, object: nil)
     }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
