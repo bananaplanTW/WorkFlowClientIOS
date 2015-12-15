@@ -41,7 +41,7 @@
                                             </constraints>
                                             <state key="normal" title="暫停"/>
                                             <connections>
-                                                <action selector="handlePauseTask:" destination="fPE-pq-8ji" eventType="touchUpInside" id="GMf-yp-htW"/>
+                                                <action selector="handleSuspendTask:" destination="fPE-pq-8ji" eventType="touchUpInside" id="mEo-hS-Gwp"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXl-OX-TGy">

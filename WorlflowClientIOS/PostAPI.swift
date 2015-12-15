@@ -78,4 +78,26 @@ class PostAPI {
             }
         }
     }
+    class func suspendTask (taskId: String) {
+        let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.SUSPEND_TASK, queries: nil)
+        let headers:Dictionary = [
+            "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
+            "x-user-id": WorkingDataStore.sharedInstance().getUserId(),
+        ]
+        let body: Dictionary = [
+            "td": taskId
+        ]
+        
+        RestfulUtils.post(urlString, headers: headers, body: body) {
+            (response: NSURLResponse?, data: NSData?, errors: NSError?) in
+            // should notify system
+            if errors != nil {
+                print("something wrong")
+                print(errors)
+                return
+            } else {
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SUSPENDED_TASK, object: nil)
+            }
+        }
+    }
 }

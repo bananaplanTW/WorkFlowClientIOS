@@ -26,8 +26,10 @@ class EmployeeCurrentTaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func handlePauseTask(sender: UIButton) {
+    @IBAction func handleSuspendTask(sender: UIButton) {
+        PostAPI.suspendTask(task.id)
     }
     @IBAction func handleCompleteTask(sender: UIButton) {
+        print("completeTask")
     }
 }

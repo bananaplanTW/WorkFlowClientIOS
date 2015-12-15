@@ -17,5 +17,6 @@ class APIs {
         static let SELF = "/api/self"
         static let CHECK_IN_OUT = "/api/checkin-out/employee"
         static let SHIFT_TASK = "/api/v2/shift-task"
+        static let SUSPEND_TASK = "/api/v2/suspend-task"
     }
 }

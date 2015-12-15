@@ -32,8 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailLoadingEmployee", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_FAIL, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeIcon", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_ICON_COMPLETE, object: nil)
 
-        // register check in/out events
+        // register task action events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onShiftedTask", name: WorkingDataStore.ACTION_SHIFTED_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSuspendedTask", name: WorkingDataStore.ACTION_SUSPENDED_TASK, object: nil)
 
         // register check in/out events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeCheckInOut", name: WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
@@ -61,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // delegates of started tasks
     func onShiftedTask () {
+        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
+    }
+    func onSuspendedTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
     
