@@ -49,9 +49,9 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         topBar.title = task.name
         
         if task.status == .WIP {
-            self.navigationController?.toolbarHidden = true
+            self.navigationController?.setToolbarHidden(true, animated: true)
         } else {
-            self.navigationController?.toolbarHidden = false
+            self.navigationController?.setToolbarHidden(false, animated: true)
         }
     }
 
@@ -175,7 +175,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func onShiftTask(sender: UIBarButtonItem) {
         PostAPI.shiftTask(taskId)
         task.status = .WIP
-        self.navigationController?.toolbarHidden = true
+        self.navigationController?.setToolbarHidden(true, animated: true)
     }
 
     

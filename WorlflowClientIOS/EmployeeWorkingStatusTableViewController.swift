@@ -24,6 +24,9 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         initData()
         initViews()
     }
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.setToolbarHidden(false, animated: false)
+    }
     
     func registerNotificationObservers () {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeUpdated", name: WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
@@ -41,8 +44,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
     func initViews () {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "syncTaskData", forControlEvents: UIControlEvents.ValueChanged)
-
-        self.navigationController?.setToolbarHidden(false, animated: false)
 
         if employee != nil {
             employeeName.text = employee!.name
