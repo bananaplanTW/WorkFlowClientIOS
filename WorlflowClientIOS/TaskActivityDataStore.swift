@@ -13,6 +13,7 @@ class TaskActivityDataStore {
     static let ACTION_LOAD_TASK_ACTIVITIES_FAIL: String = "actionLoadTaskActivitiesFail"
 
     static let ACTION_SENT_MESSAGE_TO_TASK: String = "actionSentMessageToTask"
+    static let ACTION_SENT_PHOTO_TO_TASK: String = "actionSentPhotoToTask"
 
     static let ACTION_SHOULD_RELOAD_TASK_ACTIVITIES: String = "ACTION_SHOULD_RELOAD_TASK_ACTIVITIES"
 
@@ -33,6 +34,10 @@ class TaskActivityDataStore {
     }
     func addTaskCommentActivityToTask (taskId: String, comment: String, ownerName: String, iconThumb: UIImage?) {
         let activity = TaskCommentActivity.createTaskCommentActivityLocally(comment, ownerName: ownerName, iconThumb: iconThumb)
+        taskActivityMap[taskId]?.insert(activity, atIndex: 0)
+    }
+    func addTaskPhotoActivityToTask (taskId: String, photo: UIImage, ownerName: String, iconThumb: UIImage?) {
+        let activity = TaskPhotoActivity.createTaskPhotoActivityLocally(photo, ownerName: ownerName, iconThumb: iconThumb)
         taskActivityMap[taskId]?.insert(activity, atIndex: 0)
     }
     

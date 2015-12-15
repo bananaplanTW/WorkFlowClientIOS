@@ -148,7 +148,7 @@ class PostAPI {
                 print(errors)
                 return
             } else {
-                print("send image success!")
+                NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SENT_PHOTO_TO_TASK, object: nil)
             }
         }
     }

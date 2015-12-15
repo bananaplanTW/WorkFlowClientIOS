@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register loading task activity events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadTaskActivities", name: TaskActivityDataStore.ACTION_LOAD_TASK_ACTIVITIES_COMPLETE, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidSendMessageToTask", name: TaskActivityDataStore.ACTION_SENT_MESSAGE_TO_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidSendPhotoToTask", name: TaskActivityDataStore.ACTION_SENT_PHOTO_TO_TASK, object: nil)
     }
 
     // delegates of loading employee
@@ -86,6 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
     }
     func onDidSendMessageToTask () {
+        NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
+    }
+    func onDidSendPhotoToTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
     }
 

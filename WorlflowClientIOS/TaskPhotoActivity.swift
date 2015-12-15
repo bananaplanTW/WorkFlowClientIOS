@@ -28,7 +28,8 @@ class TaskPhotoActivity: Activity {
             }
         }
     }
-    
+
+
     class func createTaskPhotoActivity (attributes: NSDictionary) -> Activity {
         let secs = (attributes["createdAt"] as! Int) / 1000
         let activity = TaskPhotoActivity(
@@ -47,6 +48,19 @@ class TaskPhotoActivity: Activity {
                 }
             }
         }
+        return activity
+    }
+    class func createTaskPhotoActivityLocally (photo: UIImage, ownerName: String, iconThumb: UIImage?) -> Activity {
+        let activity = TaskPhotoActivity(
+            id:        "",
+            ownerName: ownerName,
+            createdAt: NSDate(),
+            type:      .TASK_PHOTO,
+            photoPath: "",
+            thumbPath: nil
+        )
+        activity.thumb = photo
+        activity.iconThumb = iconThumb
         return activity
     }
 }

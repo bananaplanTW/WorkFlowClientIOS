@@ -83,6 +83,8 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         let imageName = String(Int(date.timeIntervalSince1970)) + ".jpg"
 
         PostAPI.sendAnImageToTask(ImageUtils.correctlyOrientedImage(image), imageName: imageName, taskId: taskId)
+
+        TaskActivityDataStore.sharedInstance().addTaskPhotoActivityToTask(taskId, photo: image, ownerName: employee.name, iconThumb: employee.thumb)
     }
 
 
