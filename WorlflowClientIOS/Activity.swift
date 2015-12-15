@@ -19,6 +19,7 @@ class Activity {
     let ownerName: String!
     let createdAt: NSDate!
     let type: ActivityType!
+    var iconThumb: UIImage?
     init (id: String, ownerName: String, createdAt: NSDate, type: ActivityType) {
         self.id = id
         self.ownerName = ownerName

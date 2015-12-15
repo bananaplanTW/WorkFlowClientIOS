@@ -12,7 +12,9 @@ class TaskActivityDataStore {
     static let ACTION_LOAD_TASK_ACTIVITIES_COMPLETE: String = "actionLoadTaskActivitiesComplete"
     static let ACTION_LOAD_TASK_ACTIVITIES_FAIL: String = "actionLoadTaskActivitiesFail"
 
-    static let ACTION_UPDATE_TASK_ACTIVITIES: String = "ACTION_UPDATE_TASK_ACTIVITIES"
+    static let ACTION_SENT_MESSAGE_TO_TASK: String = "actionSentMessageToTask"
+
+    static let ACTION_SHOULD_RELOAD_TASK_ACTIVITIES: String = "ACTION_SHOULD_RELOAD_TASK_ACTIVITIES"
 
     class func sharedInstance () -> TaskActivityDataStore {
         struct Static {
@@ -28,6 +30,10 @@ class TaskActivityDataStore {
             return activities
         }
         return []
+    }
+    func addTaskCommentActivityToTask (taskId: String, comment: String, ownerName: String, iconThumb: UIImage?) {
+        let activity = TaskCommentActivity.createTaskCommentActivityLocally(comment, ownerName: ownerName, iconThumb: iconThumb)
+        taskActivityMap[taskId]?.insert(activity, atIndex: 0)
     }
     
 

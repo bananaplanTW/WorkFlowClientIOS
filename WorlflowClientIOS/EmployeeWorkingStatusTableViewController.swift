@@ -169,25 +169,47 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         }
     }
     
-    /*
+
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if indexPath.section == 0 {
+            return false
+        } else {
+            return true
+        }
     }
-    */
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        if indexPath.section == 1 {
+            // [TODO] should add cancel task later
+//            let cancelTask = UITableViewRowAction(style: .Normal, title: "取消工作") { (action, indexPath) in
+//                print("cancel task", self.scheduletTaskList[indexPath.row].name)
+//            }
+//            cancelTask.backgroundColor = UIColor.redColor()
+            let shiftTask = UITableViewRowAction(style: .Normal, title: "開始工作") { (action, indexPath) in
+                PostAPI.shiftTask(self.scheduletTaskList[indexPath.row].id)
+            }
+            shiftTask.backgroundColor = UIColor.blueColor()
+            
+            return [shiftTask]
+        } else {
+            return nil
+        }
+    }
+
 
     /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     */
+
 
     /*
     // Override to support rearranging the table view.

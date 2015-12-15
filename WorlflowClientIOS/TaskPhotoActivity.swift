@@ -31,7 +31,7 @@ class TaskPhotoActivity: Activity {
     
     class func createTaskPhotoActivity (attributes: NSDictionary) -> Activity {
         let secs = (attributes["createdAt"] as! Int) / 1000
-        return TaskPhotoActivity(
+        let activity = TaskPhotoActivity(
             id:         attributes["_id"] as! String,
             ownerName:  attributes["ownerName"] as! String,
             createdAt:  NSDate(timeIntervalSince1970: NSTimeInterval(secs)),
@@ -39,5 +39,14 @@ class TaskPhotoActivity: Activity {
             photoPath:  attributes["imageUrl"] as! String,
             thumbPath:  attributes["thumbUrl"] as? String
         )
+        if let path:String = attributes["iconThumbUrl"] as? String {
+            GetAPI.getImage(path) { (data, response, error) in
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    guard let data = data where error == nil else { return }
+                    activity.iconThumb = UIImage(data: data)
+                }
+            }
+        }
+        return activity
     }
 }

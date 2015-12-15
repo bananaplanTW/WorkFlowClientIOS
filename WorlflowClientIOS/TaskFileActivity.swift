@@ -21,7 +21,7 @@ class TaskFileActivity: Activity {
     
     class func createTaskFileActivity (attributes: NSDictionary) -> Activity {
         let secs = (attributes["createdAt"] as! Int) / 1000
-        return TaskFileActivity(
+        let activity = TaskFileActivity(
             id:        attributes["_id"] as! String,
             ownerName: attributes["ownerName"] as! String,
             createdAt: NSDate(timeIntervalSince1970: NSTimeInterval(secs)),
@@ -29,5 +29,14 @@ class TaskFileActivity: Activity {
             filePath:  attributes["fileUrl"] as! String,
             fileName:  attributes["name"] as! String
         )
+        if let path:String = attributes["iconThumbUrl"] as? String {
+            GetAPI.getImage(path) { (data, response, error) in
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    guard let data = data where error == nil else { return }
+                    activity.iconThumb = UIImage(data: data)
+                }
+            }
+        }
+        return activity
     }
 }

@@ -33,12 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeIcon", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_ICON_COMPLETE, object: nil)
 
         // register task action events
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onShiftedTask", name: WorkingDataStore.ACTION_SHIFTED_TASK, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSuspendedTask", name: WorkingDataStore.ACTION_SUSPENDED_TASK, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onCompletedTask", name: WorkingDataStore.ACTION_COMPLETED_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidShiftTask", name: WorkingDataStore.ACTION_SHIFTED_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidSuspendTask", name: WorkingDataStore.ACTION_SUSPENDED_TASK, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidCompleteTask", name: WorkingDataStore.ACTION_COMPLETED_TASK, object: nil)
 
         // register check in/out events
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onEmployeeCheckInOut", name: WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidEmployeeCheckInOut", name: WorkingDataStore.ACTION_EMPLOYEE_CHECK_IN_OUT, object: nil)
         
         // register loading task events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadEmployeeTasks", name: WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
@@ -46,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // register loading task activity events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidLoadTaskActivities", name: TaskActivityDataStore.ACTION_LOAD_TASK_ACTIVITIES_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDidSendMessageToTask", name: TaskActivityDataStore.ACTION_SENT_MESSAGE_TO_TASK, object: nil)
     }
 
     // delegates of loading employee
@@ -57,18 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func onDidLoadEmployeeIcon () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE_ICON, object: nil)
     }
-    func onEmployeeCheckInOut () {
+    func onDidEmployeeCheckInOut () {
         WorkingDataStore.sharedInstance().syncSelf()
     }
 
     // delegates of task actions
-    func onShiftedTask () {
+    func onDidShiftTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
-    func onSuspendedTask () {
+    func onDidSuspendTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
-    func onCompletedTask () {
+    func onDidCompleteTask () {
         NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_SHOULD_RELOAD_EMPLOYEE, object: nil)
     }
     
@@ -82,7 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // delegates of loading task activities
     func onDidLoadTaskActivities () {
-        NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_UPDATE_TASK_ACTIVITIES, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
+    }
+    func onDidSendMessageToTask () {
+        NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
     }
 
 

@@ -30,7 +30,7 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func registerNotificationObservers () {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskActivityDataUpdated", name: TaskActivityDataStore.ACTION_UPDATE_TASK_ACTIVITIES, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTaskActivityDataUpdated", name: TaskActivityDataStore.ACTION_SHOULD_RELOAD_TASK_ACTIVITIES, object: nil)
     }
     
     func initData () {
@@ -108,6 +108,11 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         switch activityType! {
         case .TASK_COMMENT:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCommentTableViewCell", forIndexPath: indexPath) as! ActivityCommentTableViewCell
+            if let thumb = activity.iconThumb {
+                cell.icon.image = thumb
+            } else {
+                cell.icon.image = UIImage(named: "icon")
+            }
             cell.employeeName.text = activity.ownerName
             cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.comment.text = (activity as! TaskCommentActivity).comment
@@ -115,6 +120,11 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
         case .TASK_PHOTO:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityPhotoTableViewCell", forIndexPath: indexPath) as! ActivityPhotoTableViewCell
+            if let thumb = activity.iconThumb {
+                cell.icon.image = thumb
+            } else {
+                cell.icon.image = UIImage(named: "icon")
+            }
             cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.employeeName.text = activity.ownerName
             
@@ -126,6 +136,11 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
         case .TASK_FILE:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityFileTableViewCell", forIndexPath: indexPath) as! ActivityFileTableViewCell
+            if let thumb = activity.iconThumb {
+                cell.icon.image = thumb
+            } else {
+                cell.icon.image = UIImage(named: "icon")
+            }
             cell.employeeName.text = activity.ownerName
             cell.time.text = NSDateFormatter.localizedStringFromDate(activity.createdAt, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             cell.fileName.text = (activity as! TaskFileActivity).fileName

@@ -437,7 +437,7 @@
                                         <connections>
                                             <outlet property="comment" destination="I6O-w8-nTJ" id="6ej-To-LP5"/>
                                             <outlet property="employeeName" destination="PJe-K7-DRv" id="uGD-pI-laI"/>
-                                            <outlet property="icon" destination="W5c-KY-wau" id="GgR-k0-T10"/>
+                                            <outlet property="icon" destination="m9C-dK-vve" id="Lns-bd-TPy"/>
                                             <outlet property="time" destination="cie-3x-UT3" id="ptL-3m-iU1"/>
                                         </connections>
                                     </tableViewCell>

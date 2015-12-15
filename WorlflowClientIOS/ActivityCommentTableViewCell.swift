@@ -10,7 +10,7 @@ import UIKit
 
 class ActivityCommentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var icon: UIView!
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var employeeName: UILabel!
     @IBOutlet weak var comment: UITextView!
     @IBOutlet weak var time: UILabel!

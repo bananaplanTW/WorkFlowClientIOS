@@ -25,11 +25,11 @@ class PostAPI {
             (response: NSURLResponse?, data: NSData?, errors: NSError?) in
             // should notify system
             if errors != nil {
-                print("something wrong")
+                print("sendAMessageToTask error")
                 print(errors)
                 return
             } else {
-                print("send message success!")
+                NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SENT_MESSAGE_TO_TASK, object: nil)
             }
         }
     }
