@@ -699,6 +699,9 @@
                                     <constraint firstAttribute="height" constant="40" id="DDp-hg-wp5"/>
                                 </constraints>
                                 <state key="normal" title="照片"/>
+                                <connections>
+                                    <action selector="onSendingImage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="fBz-vu-YOa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

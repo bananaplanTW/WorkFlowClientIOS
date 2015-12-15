@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmployeeSendMessageViewController: UIViewController {
+class EmployeeSendMessageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var taskId: String!
     var employee: Employee!
@@ -54,7 +54,22 @@ class EmployeeSendMessageViewController: UIViewController {
         self.view.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
         initMessageBox()
     }
+    @IBAction func onSendingImage(sender: AnyObject) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.Camera
+        image.allowsEditing = false
+        
+        presentViewController(image, animated: true, completion: nil)
+    }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        dismissViewControllerAnimated(true, completion: nil)
+        let date = NSDate()
+        let imageName = String(Int(date.timeIntervalSince1970)) + ".jpg"
+        
+        PostAPI.sendAnImageToTask(ImageUtils.correctlyOrientedImage(image), imageName: imageName, taskId: taskId)
+    }
     
     func keyboardWillBeShown (notification : NSNotification) {
         let info = notification.userInfo

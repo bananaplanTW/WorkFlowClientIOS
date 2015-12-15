@@ -46,6 +46,7 @@
 		67FA37991C19964200D992CC /* EmployeePendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA37981C19964200D992CC /* EmployeePendingTableViewCell.swift */; };
 		67FA379C1C1998F800D992CC /* RestfulUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379B1C1998F800D992CC /* RestfulUtils.swift */; };
 		67FA379E1C199B5B00D992CC /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379D1C199B5B00D992CC /* URLUtils.swift */; };
+		B9193C241C201356004552E2 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9193C231C201356004552E2 /* ImageUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		67FA379D1C199B5B00D992CC /* URLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtils.swift; sourceTree = "<group>"; };
 		6DA9D3CE42C040248B7203D9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A1EE691F60EE3F4CE01E89C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B9193C231C201356004552E2 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 			children = (
 				67FA379B1C1998F800D992CC /* RestfulUtils.swift */,
 				67FA379D1C199B5B00D992CC /* URLUtils.swift */,
+				B9193C231C201356004552E2 /* ImageUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				678F68BE1C1A7DB8002CAAF8 /* TaskActivityDataStore.swift in Sources */,
 				678F68D31C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift in Sources */,
 				67F42ECF1C1D522500F18EA9 /* GetAPI.swift in Sources */,
+				B9193C241C201356004552E2 /* ImageUtils.swift in Sources */,
 				677F78F21C1976B6001DFD0E /* ActivityPhotoTableViewCell.swift in Sources */,
 				674D05391C1827F50011238C /* AppDelegate.swift in Sources */,
 			);

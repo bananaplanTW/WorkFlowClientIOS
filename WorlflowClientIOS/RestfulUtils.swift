@@ -51,4 +51,26 @@ class RestfulUtils {
             backward(NSURLResponse(), nil, NSError(domain: "NSJSONSerialization error", code: 401, userInfo: nil))
         }
     }
+    
+    class func postImage(urlString: String, headers: Dictionary<String, String>, imageData: NSData, backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
+        let encodedUrlString:String = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let urlRequest = NSMutableURLRequest(URL: NSURL(string: encodedUrlString)!)
+        
+        for (key, value) in headers {
+            urlRequest.addValue(value, forHTTPHeaderField: key)
+        }
+        urlRequest.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue(String(imageData.length), forHTTPHeaderField: "s")
+        urlRequest.HTTPMethod = "POST"
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration)
+        print(urlString, imageData.length)
+        let task = session.uploadTaskWithRequest(urlRequest, fromData: imageData) {
+            (data, response, error) in
+            backward(response, data, error)
+        }
+        
+        task.resume()
+    }
 }

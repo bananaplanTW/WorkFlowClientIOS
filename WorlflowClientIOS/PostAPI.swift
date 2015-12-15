@@ -129,4 +129,27 @@ class PostAPI {
             }
         }
     }
+    class func sendAnImageToTask(image: UIImage, imageName: String, taskId: String) {
+        let imageData: NSData = UIImageJPEGRepresentation(image, 0.8)!
+        let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.ADD_IMAGE_TASK_ACTIVITY, queries: nil)
+        
+        let headers:Dictionary = [
+            "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
+            "x-user-id": WorkingDataStore.sharedInstance().getUserId(),
+            "td": taskId,
+            "fn": imageName
+        ]
+
+        RestfulUtils.postImage(urlString, headers: headers, imageData: imageData) {
+            (response: NSURLResponse?, data: NSData?, errors: NSError?) in
+            // should notify system
+            if errors != nil {
+                print("something wrong")
+                print(errors)
+                return
+            } else {
+                print("send image success!")
+            }
+        }
+    }
 }
