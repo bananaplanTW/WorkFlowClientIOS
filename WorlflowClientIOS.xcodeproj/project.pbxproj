@@ -48,6 +48,7 @@
 		67FA379C1C1998F800D992CC /* RestfulUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379B1C1998F800D992CC /* RestfulUtils.swift */; };
 		67FA379E1C199B5B00D992CC /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FA379D1C199B5B00D992CC /* URLUtils.swift */; };
 		B9193C241C201356004552E2 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9193C231C201356004552E2 /* ImageUtils.swift */; };
+		B9193C261C21258E004552E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9193C251C21258E004552E2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		6DA9D3CE42C040248B7203D9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A1EE691F60EE3F4CE01E89C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B9193C231C201356004552E2 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
+		B9193C251C21258E004552E2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				677F78ED1C196D0D001DFD0E /* TaskDetailsViewController.swift */,
 				678F68D21C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift */,
 				67F42ED61C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift */,
+				B9193C251C21258E004552E2 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				678F68CD1C1A9225002CAAF8 /* APIs.swift in Sources */,
 				67F42ED71C1F08D700F18EA9 /* EmployeeCheckInOutViewController.swift in Sources */,
 				67F42ED91C1F0E1300F18EA9 /* Timecard.swift in Sources */,
+				B9193C261C21258E004552E2 /* LoginViewController.swift in Sources */,
 				678F68BE1C1A7DB8002CAAF8 /* TaskActivityDataStore.swift in Sources */,
 				678F68D31C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift in Sources */,
 				67F42ECF1C1D522500F18EA9 /* GetAPI.swift in Sources */,

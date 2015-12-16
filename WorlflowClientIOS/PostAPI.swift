@@ -20,7 +20,6 @@ class PostAPI {
             "msg": message,
         ]
         
-        
         RestfulUtils.post(urlString, headers: headers, body: body) {
             (response: NSURLResponse?, data: NSData?, errors: NSError?) in
             // should notify system
@@ -149,6 +148,41 @@ class PostAPI {
                 return
             } else {
                 NSNotificationCenter.defaultCenter().postNotificationName(TaskActivityDataStore.ACTION_SENT_PHOTO_TO_TASK, object: nil)
+            }
+        }
+    }
+
+    class func login(userName: String, password: String, companyAccount: String, backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
+        let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.LOGIN, queries: nil)
+
+        let headers:Dictionary = [
+            "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
+            "x-user-id": WorkingDataStore.sharedInstance().getUserId(),
+        ]
+
+        var body: Dictionary = [String: String]()
+        body["username"] = userName
+        body["password"] = password
+        body["companyAccount"] = companyAccount
+
+        RestfulUtils.post(urlString, headers: headers, body: body) {
+            (response: NSURLResponse?, data: NSData?, errors: NSError?) in
+
+            do {
+                let parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+
+                if let res = parsedData as? NSDictionary {
+                    if res["status"] as! String == "success" {
+                        let userData: NSDictionary = res["data"] as! NSDictionary
+                        WorkingDataStore.sharedInstance().setUserId(userData["userId"] as! String)
+                        WorkingDataStore.sharedInstance().setAuthToken(userData["authToken"] as! String)
+                        backward(response, data, errors)
+                        return
+                    }
+                }
+                backward(response, data, NSError(domain: "login fail", code: 404, userInfo: nil))
+            } catch {
+                backward(response, data, NSError(domain: "login fail", code: 404, userInfo: nil))
             }
         }
     }

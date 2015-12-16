@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yxs-Dt-9CU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wKD-fV-VWO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -769,7 +769,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VHA-5q-K0e">
             <objects>
-                <navigationController id="Yxs-Dt-9CU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yxs-Dt-9CU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wU7-PE-3tU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -799,6 +799,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLD-ZF-lis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2878" y="1277"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="XQ8-zH-vu1">
+            <objects>
+                <viewController id="wKD-fV-VWO" customClass="LoginViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QUi-B8-WRP"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mK-Cu-csD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hqy-aE-UcJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-WD-5bZ">
+                                <rect key="frame" x="152" y="202" width="297" height="195"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zk3-zt-IWY">
+                                        <rect key="frame" x="8" y="93" width="281" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="帳號" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-UZ-uB0">
+                                        <rect key="frame" x="8" y="44" width="281" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y38-xC-4OV">
+                                        <rect key="frame" x="117" y="147" width="63" height="30"/>
+                                        <state key="normal" title="登入"/>
+                                        <connections>
+                                            <action selector="onLoginButtonClick:" destination="wKD-fV-VWO" eventType="touchUpInside" id="YPO-cz-xD9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="VMa-qU-WRP"/>
+                                    <constraint firstAttribute="height" constant="195" id="wlu-G7-jNs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxN-WD-5bZ" firstAttribute="centerX" secondItem="Hqy-aE-UcJ" secondAttribute="centerX" id="6p4-qW-HKm"/>
+                            <constraint firstItem="kxN-WD-5bZ" firstAttribute="centerY" secondItem="Hqy-aE-UcJ" secondAttribute="centerY" id="Z1F-Ir-7z4"/>
+                            <constraint firstItem="kxN-WD-5bZ" firstAttribute="centerX" secondItem="Hqy-aE-UcJ" secondAttribute="centerX" id="dme-8g-Yxg"/>
+                            <constraint firstItem="kxN-WD-5bZ" firstAttribute="centerY" secondItem="Hqy-aE-UcJ" secondAttribute="centerY" id="i4J-Ji-Xtj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginContainer" destination="kxN-WD-5bZ" id="LMi-Sh-4aL"/>
+                        <outlet property="password" destination="zk3-zt-IWY" id="ePd-aM-CAg"/>
+                        <outlet property="userName" destination="WgJ-UZ-uB0" id="fTz-qk-ddW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SJ-0u-V7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="1270"/>
         </scene>
     </scenes>
     <resources>
