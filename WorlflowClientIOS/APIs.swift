@@ -20,6 +20,7 @@ class APIs {
         static let SHIFT_TASK = "/api/v2/shift-task"
         static let SUSPEND_TASK = "/api/v2/suspend-task"
         static let COMPLETE_TASK = "/api/v2/complete-task"
-        static let LOGIN = "/api/login";
+        static let LOGIN = "/api/login"
+        static let CEHCK_TASK_TODO = "/api/v2/check-task-todo"
     }
 }

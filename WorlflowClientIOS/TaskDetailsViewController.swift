@@ -100,6 +100,8 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCellWithIdentifier("TodoTableViewCell", forIndexPath: indexPath) as! TodoTableViewCell
             cell.todoName.text = todo.name
             cell.checkbox.on = todo.checked
+            cell.taskId = taskId
+            cell.todoIndex = indexPath.row
             return cell
         }
 

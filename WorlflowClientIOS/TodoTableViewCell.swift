@@ -8,11 +8,13 @@
 
 import UIKit
 
-class TodoTableViewCell: UITableViewCell {
+class TodoTableViewCell: UITableViewCell, BEMCheckBoxDelegate {
 
     @IBOutlet weak var checkboxContainer: UIView!
     @IBOutlet weak var todoName: UILabel!
-    
+
+    var taskId: String!
+    var todoIndex: Int!
     var checkbox: BEMCheckBox!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +28,15 @@ class TodoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func initCheckbox () {
         checkbox = BEMCheckBox(frame: CGRectMake(0, 0, 30, 30))
+        checkbox.delegate = self
         checkbox.boxType = BEMBoxType.Square
         checkboxContainer.addSubview(checkbox)
     }
 
+    func didTapCheckBox(checkBox: BEMCheckBox) {
+        PostAPI.checkTaskTodo(taskId, todoIndex: todoIndex, checked: checkBox.on)
+    }
 }
