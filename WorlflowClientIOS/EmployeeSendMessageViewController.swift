@@ -99,7 +99,7 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
     }
 
     func initMessageBox () {
-        messageBox.text = "Leave Messages"
+        messageBox.text = NSLocalizedString("leave_message", comment: "文字紀錄")
         messageBox.textColor = UIColor.grayColor()
     }
     func typingMessageBox () {

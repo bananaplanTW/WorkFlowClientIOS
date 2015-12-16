@@ -18,7 +18,7 @@ class LocationManager {
         return Static.instance
     }
 
-    private var address: String = "搜尋中.."
+    private var address: String = NSLocalizedString("searching", comment: "搜尋中")
     private let locMgr: CLLocationManager!
     private init () {
         locMgr = CLLocationManager()
