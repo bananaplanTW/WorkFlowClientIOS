@@ -186,7 +186,8 @@ class TaskDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueSendMessage" {
-            let destinationViewController: EmployeeSendMessageViewController = segue.destinationViewController as! EmployeeSendMessageViewController
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let destinationViewController: EmployeeSendMessageViewController = navigationController.topViewController as! EmployeeSendMessageViewController
             destinationViewController.taskId = task.id
         }
     }

@@ -632,7 +632,7 @@
                     <navigationItem key="navigationItem" title="Title" id="3q3-Co-gxc">
                         <barButtonItem key="rightBarButtonItem" title="Comment" id="qyb-ws-tpC">
                             <connections>
-                                <segue destination="Xf8-1o-ZZ2" kind="presentation" identifier="segueSendMessage" id="yeD-46-Mxf"/>
+                                <segue destination="aWf-6W-d0m" kind="presentation" identifier="segueSendMessage" id="yeD-46-Mxf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -645,7 +645,7 @@
             </objects>
             <point key="canvasLocation" x="2134" y="1276"/>
         </scene>
-        <!--Employee Send Message View Controller-->
+        <!--工作記錄-->
         <scene sceneID="TGn-fV-uhF">
             <objects>
                 <viewController id="Xf8-1o-ZZ2" customClass="EmployeeSendMessageViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -657,18 +657,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztr-dV-Ihv">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Leave Comment" id="SOp-wW-nzb">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" id="3wv-pC-Amb">
-                                            <connections>
-                                                <action selector="doneButton:" destination="Xf8-1o-ZZ2" id="FKT-su-5R1"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-20-Hcp">
                                 <rect key="frame" x="500" y="552" width="80" height="40"/>
                                 <constraints>
@@ -712,14 +700,12 @@
                                 <state key="normal" title="相簿"/>
                                 <connections>
                                     <action selector="onPickingImageFromAlbum:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="H6r-7M-Kht"/>
-                                    <action selector="onSendingImage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="Vcz-4x-1cR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="PJ6-au-F0e" secondAttribute="leading" id="0eE-U9-7nP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ztr-dV-Ihv" secondAttribute="trailing" constant="-20" id="5BM-8a-02l"/>
                             <constraint firstItem="mDb-sG-w4B" firstAttribute="top" secondItem="HTB-8b-dmE" secondAttribute="bottom" constant="5" id="7XN-I6-g1y"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HTB-8b-dmE" secondAttribute="leading" id="A0V-ue-dco"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="PJ6-au-F0e" secondAttribute="bottom" constant="20" id="FT4-ib-Vzh"/>
@@ -729,15 +715,13 @@
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="20" id="P1w-cw-aP4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" constant="8" id="Q5w-LN-Usg"/>
                             <constraint firstItem="PJ6-au-F0e" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="8" id="UyC-W3-b6e"/>
-                            <constraint firstItem="xmh-Ra-bQE" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" constant="44" id="c0K-lx-BTT"/>
+                            <constraint firstItem="xmh-Ra-bQE" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" id="c0K-lx-BTT"/>
                             <constraint firstItem="HTB-8b-dmE" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="8" id="fAh-6x-Ye2"/>
-                            <constraint firstItem="ztr-dV-Ihv" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" id="hC6-Vf-cDW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" id="jxr-Ln-dne"/>
                             <constraint firstItem="PJ6-au-F0e" firstAttribute="top" secondItem="HTB-8b-dmE" secondAttribute="bottom" constant="5" id="kgw-QZ-MKq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xmh-Ra-bQE" secondAttribute="trailing" constant="-12" id="nzH-ZI-7mp"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="8" id="ud7-yr-lNu"/>
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="100" id="vsS-K1-U1u"/>
-                            <constraint firstItem="ztr-dV-Ihv" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="-20" id="wda-jW-kxf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PJ6-au-F0e" secondAttribute="trailing" constant="480" id="zCe-6o-Vdn"/>
                         </constraints>
                         <variation key="default">
@@ -751,13 +735,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="工作記錄" id="lA4-2v-KJR">
+                        <barButtonItem key="leftBarButtonItem" title="完成" id="ce0-pl-MVr">
+                            <connections>
+                                <action selector="doneButton:" destination="Xf8-1o-ZZ2" id="WVC-n5-rhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageBox" destination="xmh-Ra-bQE" id="hAM-Nx-jNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-p0-OhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="1277"/>
+            <point key="canvasLocation" x="3592" y="1277"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VHA-5q-K0e">
@@ -774,6 +765,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAT-Ft-ril" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="710" y="1276"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fy4-4I-tv2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aWf-6W-d0m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="03Z-0L-KvY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xf8-1o-ZZ2" kind="relationship" relationship="rootViewController" id="9GJ-z0-NOV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLD-ZF-lis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="1277"/>
         </scene>
     </scenes>
     <resources>

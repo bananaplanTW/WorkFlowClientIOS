@@ -62,7 +62,7 @@ class EmployeeSendMessageViewController: UIViewController, UINavigationControlle
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.Camera
         image.allowsEditing = false
-        
+
         presentViewController(image, animated: true, completion: nil)
     }
 

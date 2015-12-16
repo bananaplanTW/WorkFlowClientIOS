@@ -62,10 +62,10 @@ class RestfulUtils {
         urlRequest.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue(String(imageData.length), forHTTPHeaderField: "s")
         urlRequest.HTTPMethod = "POST"
-        
+
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
-        print(urlString, imageData.length)
+
         let task = session.uploadTaskWithRequest(urlRequest, fromData: imageData) {
             (data, response, error) in
             backward(response, data, error)
