@@ -22,14 +22,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="伺服器專案開發" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lU-43-ych">
-                                            <rect key="frame" x="8" y="18" width="119" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lU-43-ych">
+                                            <rect key="frame" x="8" y="18" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="流程專案管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-yd-fuP">
-                                            <rect key="frame" x="8" y="47" width="102" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-yd-fuP">
+                                            <rect key="frame" x="8" y="47" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64.5" id="Ii7-ok-hNV"/>
                                             </constraints>
-                                            <state key="normal" title="暫停"/>
+                                            <state key="normal" title="Pause"/>
                                             <connections>
                                                 <action selector="handleSuspendTask:" destination="fPE-pq-8ji" eventType="touchUpInside" id="mEo-hS-Gwp"/>
                                             </connections>
@@ -49,18 +49,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64.5" id="SXl-cT-Sy8"/>
                                             </constraints>
-                                            <state key="normal" title="完成"/>
+                                            <state key="normal" title="Complete"/>
                                             <connections>
                                                 <action selector="handleCompleteTask:" destination="fPE-pq-8ji" eventType="touchUpInside" id="iXV-Ie-cZH"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5lU-43-ych" secondAttribute="trailing" id="8le-Zu-4O1"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="5lU-43-ych" secondAttribute="leading" id="IPw-Wt-ZKC"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="qKo-yd-fuP" secondAttribute="leading" id="WUV-qt-6jI"/>
                                         <constraint firstItem="qPJ-VU-kwe" firstAttribute="leading" secondItem="cdJ-fZ-mOk" secondAttribute="leadingMargin" constant="-8" id="YFd-yI-oD1"/>
                                         <constraint firstItem="aXl-OX-TGy" firstAttribute="leading" secondItem="qPJ-VU-kwe" secondAttribute="trailing" id="cjW-FD-cqq"/>
                                         <constraint firstItem="qPJ-VU-kwe" firstAttribute="width" secondItem="aXl-OX-TGy" secondAttribute="width" id="fKV-mX-eyE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qKo-yd-fuP" secondAttribute="trailing" id="ghc-kd-i91"/>
                                         <constraint firstItem="5lU-43-ych" firstAttribute="top" secondItem="cdJ-fZ-mOk" secondAttribute="topMargin" constant="10" id="rbT-yM-QE5"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="aXl-OX-TGy" secondAttribute="trailing" constant="-8" id="uAr-lJ-Cuy"/>
                                         <constraint firstItem="qKo-yd-fuP" firstAttribute="top" secondItem="5lU-43-ych" secondAttribute="bottom" constant="8" id="vD0-Sf-AZc"/>
@@ -85,14 +87,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點取下方工作區開始工作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56z-vt-U3t">
-                                            <rect key="frame" x="218" y="83" width="165" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Working by Picking a Task Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56z-vt-U3t">
+                                            <rect key="frame" x="8" y="83" width="584" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="準備下一項工作中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-AF-lmK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-AF-lmK">
                                             <rect key="frame" x="212" y="55" width="176" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="176" id="Vyh-W9-XUj"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -100,10 +105,17 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="g9j-AF-lmK" firstAttribute="centerX" secondItem="Sa4-U2-jId" secondAttribute="centerX" id="UnS-gQ-Zij"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="56z-vt-U3t" secondAttribute="leading" id="dZ4-it-FpX"/>
                                         <constraint firstItem="56z-vt-U3t" firstAttribute="top" secondItem="g9j-AF-lmK" secondAttribute="bottom" constant="2" id="hQR-vI-I1R"/>
                                         <constraint firstItem="56z-vt-U3t" firstAttribute="centerX" secondItem="Sa4-U2-jId" secondAttribute="centerX" id="m5g-rW-oOF"/>
                                         <constraint firstItem="g9j-AF-lmK" firstAttribute="top" secondItem="Sa4-U2-jId" secondAttribute="topMargin" constant="47" id="ngt-w6-m5L"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="56z-vt-U3t" secondAttribute="trailing" id="sXj-nZ-pca"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="m5g-rW-oOF"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeScheduledTaskTableViewCell" rowHeight="60" id="nhm-jo-46S" customClass="EmployeeScheduledTaskTableViewCell" customModule="WorlflowClientIOS" customModuleProvider="target">
@@ -113,13 +125,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android 開發" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-dG-8Do">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-dG-8Do">
                                             <rect key="frame" x="53" y="20" width="470" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暫停" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-b9-fc2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-b9-fc2">
                                             <rect key="frame" x="531" y="20" width="54" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,14 +301,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hj7-So-8Sq">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下班時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d20-9y-vZP">
-                                        <rect key="frame" x="200" y="65" width="68" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check-Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d20-9y-vZP">
+                                        <rect key="frame" x="177" y="65" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上班時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyx-qU-K1G">
-                                        <rect key="frame" x="41" y="65" width="68" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check-In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyx-qU-K1G">
+                                        <rect key="frame" x="8" y="65" width="134" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -307,22 +319,22 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尚未下班" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-BI-Xoo">
-                                        <rect key="frame" x="177" y="103" width="115" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Still Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-BI-Xoo">
+                                        <rect key="frame" x="177" y="103" width="115" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="台北市中山區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no5-KX-8hc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no5-KX-8hc">
                                         <rect key="frame" x="8" y="217" width="284" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hE-FJ-fjx">
-                                        <rect key="frame" x="93" y="179" width="114" height="30"/>
+                                        <rect key="frame" x="93" y="176" width="114" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="打卡上班"/>
+                                        <state key="normal" title="Check In"/>
                                         <connections>
                                             <action selector="checkInOut:" destination="Ce8-2F-RgR" eventType="touchUpInside" id="lBt-TJ-y3Q"/>
                                             <action selector="onShowingTaskDetails:" destination="dHk-U1-cGs" eventType="touchUpInside" id="nwc-fG-wto"/>
@@ -375,11 +387,14 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-u8-eYw">
                                 <rect key="frame" x="166" y="82" width="267" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="pO0-I7-Lmn"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="待辦事項"/>
-                                    <segment title="文字"/>
-                                    <segment title="照片"/>
-                                    <segment title="檔案"/>
+                                    <segment title="Todo"/>
+                                    <segment title="Message"/>
+                                    <segment title="Photo"/>
+                                    <segment title="File"/>
                                 </segments>
                                 <connections>
                                     <action selector="activityTypeIndexChanged:" destination="yhp-FO-bZa" eventType="valueChanged" id="0fw-oM-dPM"/>
@@ -450,7 +465,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="代辦事項" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei1-95-RLo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei1-95-RLo">
                                                     <rect key="frame" x="56" y="16" width="536" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -504,13 +519,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳了一個檔案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYI-z6-r2x">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="file name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYI-z6-r2x">
                                                     <rect key="frame" x="191" y="33" width="401" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上傳了一個檔案 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isP-KT-eGa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploaded a file :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isP-KT-eGa">
                                                     <rect key="frame" x="81" y="33" width="112" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="112" id="hth-S7-Spj"/>
@@ -622,7 +637,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4UR-pQ-fHj"/>
-                        <barButtonItem title="開始此工作" id="2qh-UV-SxE">
+                        <barButtonItem title="Start Task" id="2qh-UV-SxE">
                             <connections>
                                 <action selector="onShiftTask:" destination="yhp-FO-bZa" id="fbu-ky-C9C"/>
                             </connections>
@@ -645,7 +660,7 @@
             </objects>
             <point key="canvasLocation" x="2134" y="1276"/>
         </scene>
-        <!--工作記錄-->
+        <!--Title-->
         <scene sceneID="TGn-fV-uhF">
             <objects>
                 <viewController id="Xf8-1o-ZZ2" customClass="EmployeeSendMessageViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -663,7 +678,7 @@
                                     <constraint firstAttribute="width" constant="80" id="FR4-iR-h16"/>
                                     <constraint firstAttribute="height" constant="40" id="tnd-rl-8QE"/>
                                 </constraints>
-                                <state key="normal" title="發文"/>
+                                <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="onSendingMessage:" destination="Xf8-1o-ZZ2" eventType="touchUpInside" id="5LQ-p2-ffD"/>
                                 </connections>
@@ -735,8 +750,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="工作記錄" id="lA4-2v-KJR">
-                        <barButtonItem key="leftBarButtonItem" title="完成" id="ce0-pl-MVr">
+                    <navigationItem key="navigationItem" title="Title" id="lA4-2v-KJR">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="ce0-pl-MVr">
                             <connections>
                                 <action selector="doneButton:" destination="Xf8-1o-ZZ2" id="WVC-n5-rhH"/>
                             </connections>

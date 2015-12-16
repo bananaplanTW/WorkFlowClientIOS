@@ -1,0 +1,132 @@
+
+/* Class = "UIBarButtonItem"; title = "開始此工作"; ObjectID = "2qh-UV-SxE"; */
+"2qh-UV-SxE.title" = "開始此工作";
+
+/* Class = "UILabel"; text = "->"; ObjectID = "3ho-TG-Evd"; */
+"3ho-TG-Evd.text" = "->";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "3q3-Co-gxc"; */
+"3q3-Co-gxc.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "打卡上班"; ObjectID = "4hE-FJ-fjx"; */
+"4hE-FJ-fjx.normalTitle" = "打卡上班";
+
+/* Class = "UILabel"; text = "點取下方工作區開始工作"; ObjectID = "56z-vt-U3t"; */
+"56z-vt-U3t.text" = "點取下方工作區開始工作";
+
+/* Class = "UILabel"; text = "伺服器專案開發"; ObjectID = "5lU-43-ych"; */
+"5lU-43-ych.text" = "工作名稱";
+
+/* Class = "UISegmentedControl"; 6bS-u8-eYw.segmentTitles[0] = "待辦事項"; ObjectID = "6bS-u8-eYw"; */
+"6bS-u8-eYw.segmentTitles[0]" = "待辦事項";
+
+/* Class = "UISegmentedControl"; 6bS-u8-eYw.segmentTitles[1] = "文字"; ObjectID = "6bS-u8-eYw"; */
+"6bS-u8-eYw.segmentTitles[1]" = "文字";
+
+/* Class = "UISegmentedControl"; 6bS-u8-eYw.segmentTitles[2] = "照片"; ObjectID = "6bS-u8-eYw"; */
+"6bS-u8-eYw.segmentTitles[2]" = "照片";
+
+/* Class = "UISegmentedControl"; 6bS-u8-eYw.segmentTitles[3] = "檔案"; ObjectID = "6bS-u8-eYw"; */
+"6bS-u8-eYw.segmentTitles[3]" = "檔案";
+
+/* Class = "UILabel"; text = "2015/12/12 12:20pm"; ObjectID = "AUn-jy-aJ9"; */
+"AUn-jy-aJ9.text" = "2015/12/12 12:20pm";
+
+/* Class = "UILabel"; text = "代辦事項"; ObjectID = "Ei1-95-RLo"; */
+"Ei1-95-RLo.text" = "待辦事項";
+
+/* Class = "UILabel"; text = "尚未下班"; ObjectID = "FAJ-BI-Xoo"; */
+"FAJ-BI-Xoo.text" = "尚未下班";
+
+/* Class = "UILabel"; text = "台北市東區"; ObjectID = "HTB-8b-dmE"; */
+"HTB-8b-dmE.text" = "讀取中";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "I6O-w8-nTJ"; */
+"I6O-w8-nTJ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "開始工作"; ObjectID = "Ktk-TK-rha"; */
+"Ktk-TK-rha.normalTitle" = "開始工作";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "NwJ-1U-Ldj"; */
+"NwJ-1U-Ldj.text" = "1";
+
+/* Class = "UIButton"; normalTitle = "照片"; ObjectID = "PJ6-au-F0e"; */
+"PJ6-au-F0e.normalTitle" = "照片";
+
+/* Class = "UILabel"; text = "Danny Lin"; ObjectID = "PJe-K7-DRv"; */
+"PJe-K7-DRv.text" = "Danny Lin";
+
+/* Class = "UILabel"; text = "2015/12/12 12:20pm"; ObjectID = "TAf-Sz-rLs"; */
+"TAf-Sz-rLs.text" = "2015/12/12 12:20pm";
+
+/* Class = "UIBarButtonItem"; title = "登出"; ObjectID = "X3O-68-6Hn"; */
+"X3O-68-6Hn.title" = "登出";
+
+/* Class = "UIBarButtonItem"; title = "打卡上下班"; ObjectID = "YTa-J5-wHd"; */
+"YTa-J5-wHd.title" = "打卡上下班";
+
+/* Class = "UILabel"; text = "上傳了一個檔案"; ObjectID = "YYI-z6-r2x"; */
+"YYI-z6-r2x.text" = "上傳了一個檔案";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "aXl-OX-TGy"; */
+"aXl-OX-TGy.normalTitle" = "完成";
+
+/* Class = "UIBarButtonItem"; title = "完成"; ObjectID = "ce0-pl-MVr"; */
+"ce0-pl-MVr.title" = "完成";
+
+/* Class = "UILabel"; text = "2015/12/12 12:20pm"; ObjectID = "cie-3x-UT3"; */
+"cie-3x-UT3.text" = "2015/12/12 12:20pm";
+
+/* Class = "UILabel"; text = "下班時間"; ObjectID = "d20-9y-vZP"; */
+"d20-9y-vZP.text" = "下班時間";
+
+/* Class = "UILabel"; text = "上班時間"; ObjectID = "dyx-qU-K1G"; */
+"dyx-qU-K1G.text" = "上班時間";
+
+/* Class = "UIButton"; normalTitle = "看工作紀錄"; ObjectID = "eUq-fU-j5f"; */
+"eUq-fU-j5f.normalTitle" = "看工作紀錄";
+
+/* Class = "UILabel"; text = "準備下一項工作中"; ObjectID = "g9j-AF-lmK"; */
+"g9j-AF-lmK.text" = "準備下一項工作中";
+
+/* Class = "UILabel"; text = "上傳了一個檔案 :"; ObjectID = "isP-KT-eGa"; */
+"isP-KT-eGa.text" = "上傳了一個檔案 :";
+
+/* Class = "UILabel"; text = "Danny Lin"; ObjectID = "kAd-dr-BLF"; */
+"kAd-dr-BLF.text" = "Danny Lin";
+
+/* Class = "UINavigationItem"; title = "工作記錄"; ObjectID = "lA4-2v-KJR"; */
+"lA4-2v-KJR.title" = "工作記錄";
+
+/* Class = "UIButton"; normalTitle = "相簿"; ObjectID = "mDb-sG-w4B"; */
+"mDb-sG-w4B.normalTitle" = "相簿";
+
+/* Class = "UILabel"; text = "Android 開發"; ObjectID = "nI8-dG-8Do"; */
+"nI8-dG-8Do.text" = "工作名稱";
+
+/* Class = "UILabel"; text = "台北市中山區"; ObjectID = "no5-KX-8hc"; */
+"no5-KX-8hc.text" = "台北市中山區";
+
+/* Class = "UILabel"; text = "流程專案管理"; ObjectID = "qKo-yd-fuP"; */
+"qKo-yd-fuP.text" = "案件名稱";
+
+/* Class = "UIButton"; normalTitle = "暫停"; ObjectID = "qPJ-VU-kwe"; */
+"qPJ-VU-kwe.normalTitle" = "暫停";
+
+/* Class = "UILabel"; text = "07:30"; ObjectID = "qpe-yf-4kv"; */
+"qpe-yf-4kv.text" = "07:30";
+
+/* Class = "UIBarButtonItem"; title = "Comment"; ObjectID = "qyb-ws-tpC"; */
+"qyb-ws-tpC.title" = "留言";
+
+/* Class = "UILabel"; text = "iOS 開發"; ObjectID = "tqj-mu-fBc"; */
+"tqj-mu-fBc.text" = "工作名稱";
+
+/* Class = "UILabel"; text = "暫停"; ObjectID = "w4h-b9-fc2"; */
+"w4h-b9-fc2.text" = "暫停";
+
+/* Class = "UILabel"; text = "Danny Lin"; ObjectID = "wv5-13-JKt"; */
+"wv5-13-JKt.text" = "Danny Lin";
+
+/* Class = "UIButton"; normalTitle = "發文"; ObjectID = "zhh-20-Hcp"; */
+"zhh-20-Hcp.normalTitle" = "發送";

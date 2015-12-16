@@ -150,7 +150,7 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         titleLabel.font = UIFont(name: "Avenir-Regular", size: 10.0)
         
         if section == 0 {
-            titleLabel.text = "目前工作"
+            titleLabel.text = NSLocalizedString("test", comment: "目前工作")
         } else {
             titleLabel.text = "下個工作"
         }

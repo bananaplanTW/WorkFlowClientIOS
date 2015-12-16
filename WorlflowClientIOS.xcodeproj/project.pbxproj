@@ -36,6 +36,7 @@
 		678F68D11C1AA728002CAAF8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F68D01C1AA728002CAAF8 /* Todo.swift */; };
 		678F68D31C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F68D21C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift */; };
 		67DFC3001C1A6A6A00713DFB /* ActivityFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DFC2FF1C1A6A6A00713DFB /* ActivityFileTableViewCell.swift */; };
+		67EFD1DE1C21462800DF8731 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67EFD1E01C21462800DF8731 /* Localizable.strings */; };
 		67F42ECD1C1D3C4200F18EA9 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ECC1C1D3C4200F18EA9 /* PostAPI.swift */; };
 		67F42ECF1C1D522500F18EA9 /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ECE1C1D522500F18EA9 /* GetAPI.swift */; };
 		67F42ED21C1EF9C100F18EA9 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42ED11C1EF9C100F18EA9 /* Employee.swift */; };
@@ -103,6 +104,10 @@
 		678F68D01C1AA728002CAAF8 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		678F68D21C1AC1F3002CAAF8 /* ScheduledTaskActionsPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTaskActionsPromptViewController.swift; sourceTree = "<group>"; };
 		67DFC2FF1C1A6A6A00713DFB /* ActivityFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFileTableViewCell.swift; sourceTree = "<group>"; };
+		67EFD1DC1C21455600DF8731 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		67EFD1DD1C21455600DF8731 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		67EFD1E21C21467100DF8731 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		67EFD1E31C21480D00DF8731 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67F42ECC1C1D3C4200F18EA9 /* PostAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		67F42ECE1C1D522500F18EA9 /* GetAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAPI.swift; sourceTree = "<group>"; };
 		67F42ED11C1EF9C100F18EA9 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 				677F78EF1C19767C001DFD0E /* Views */,
 				674D05701C183A0A0011238C /* Models */,
 				674D05381C1827F50011238C /* AppDelegate.swift */,
+				67EFD1E01C21462800DF8731 /* Localizable.strings */,
 				674D053A1C1827F50011238C /* ViewController.swift */,
 				674D053C1C1827F50011238C /* Main.storyboard */,
 				674D05421C1827F50011238C /* Assets.xcassets */,
@@ -440,6 +446,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 674D052C1C1827F50011238C;
 			productRefGroup = 674D05361C1827F50011238C /* Products */;
@@ -459,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				674D05461C1827F60011238C /* LaunchScreen.storyboard in Resources */,
+				67EFD1DE1C21462800DF8731 /* Localizable.strings in Resources */,
 				674D05431C1827F50011238C /* Assets.xcassets in Resources */,
 				674D053E1C1827F50011238C /* Main.storyboard in Resources */,
 			);
@@ -606,6 +614,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				674D053D1C1827F50011238C /* Base */,
+				67EFD1DC1C21455600DF8731 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -614,8 +623,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				674D05451C1827F60011238C /* Base */,
+				67EFD1DD1C21455600DF8731 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		67EFD1E01C21462800DF8731 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67EFD1E21C21467100DF8731 /* zh-Hant */,
+				67EFD1E31C21480D00DF8731 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
