@@ -150,9 +150,9 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         titleLabel.font = UIFont(name: "Avenir-Regular", size: 10.0)
         
         if section == 0 {
-            titleLabel.text = NSLocalizedString("test", comment: "目前工作")
+            titleLabel.text = NSLocalizedString("current_task", comment: "目前工作")
         } else {
-            titleLabel.text = "下個工作"
+            titleLabel.text = NSLocalizedString("scheduled_tasks", comment: "排程中工作")
         }
         
         sectionView.addSubview(titleLabel)
@@ -186,7 +186,7 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
 //                print("cancel task", self.scheduletTaskList[indexPath.row].name)
 //            }
 //            cancelTask.backgroundColor = UIColor.redColor()
-            let shiftTask = UITableViewRowAction(style: .Normal, title: "開始工作") { (action, indexPath) in
+            let shiftTask = UITableViewRowAction(style: .Normal, title: NSLocalizedString("start_task", comment: "開始工作")) { (action, indexPath) in
                 PostAPI.shiftTask(self.scheduletTaskList[indexPath.row].id)
             }
             shiftTask.backgroundColor = UIColor.blueColor()

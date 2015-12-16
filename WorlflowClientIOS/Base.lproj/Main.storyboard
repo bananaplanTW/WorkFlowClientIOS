@@ -174,7 +174,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4Uc-bu-Cjb"/>
-                        <barButtonItem title="打卡上下班" id="YTa-J5-wHd">
+                        <barButtonItem title="Check-In/Out" id="YTa-J5-wHd">
                             <connections>
                                 <action selector="onCheckingIn:" destination="D3i-jo-tCx" id="xrc-XV-irN"/>
                             </connections>
@@ -205,7 +205,7 @@
                                 </subviews>
                             </view>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="登出" id="X3O-68-6Hn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="X3O-68-6Hn"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -660,7 +660,7 @@
             </objects>
             <point key="canvasLocation" x="2134" y="1276"/>
         </scene>
-        <!--Title-->
+        <!--Activity-->
         <scene sceneID="TGn-fV-uhF">
             <objects>
                 <viewController id="Xf8-1o-ZZ2" customClass="EmployeeSendMessageViewController" customModule="WorlflowClientIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -689,8 +689,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市東區" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTB-8b-dmE">
-                                <rect key="frame" x="20" y="526.5" width="85" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTB-8b-dmE">
+                                <rect key="frame" x="20" y="526.5" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -730,6 +730,7 @@
                             <constraint firstItem="O48-Ln-gMg" firstAttribute="top" secondItem="zhh-20-Hcp" secondAttribute="bottom" constant="20" id="P1w-cw-aP4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" constant="8" id="Q5w-LN-Usg"/>
                             <constraint firstItem="PJ6-au-F0e" firstAttribute="leading" secondItem="rjV-ti-FVw" secondAttribute="leadingMargin" constant="8" id="UyC-W3-b6e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HTB-8b-dmE" secondAttribute="trailing" id="bEE-4Z-Ad2"/>
                             <constraint firstItem="xmh-Ra-bQE" firstAttribute="top" secondItem="F7q-vc-Yqx" secondAttribute="bottom" id="c0K-lx-BTT"/>
                             <constraint firstItem="HTB-8b-dmE" firstAttribute="top" secondItem="xmh-Ra-bQE" secondAttribute="bottom" constant="8" id="fAh-6x-Ye2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhh-20-Hcp" secondAttribute="trailing" id="jxr-Ln-dne"/>
@@ -750,7 +751,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="lA4-2v-KJR">
+                    <navigationItem key="navigationItem" title="Activity" id="lA4-2v-KJR">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="ce0-pl-MVr">
                             <connections>
                                 <action selector="doneButton:" destination="Xf8-1o-ZZ2" id="WVC-n5-rhH"/>

@@ -6,5 +6,11 @@
   Copyright © 2015 Daz. All rights reserved.
 */
 
-"test" = "TEST";
-"test2" = "TEST2";
+"current_task" = "Current Task";
+"scheduled_tasks" = "Scheduled Tasks";
+"start_task" = "Start";
+
+"still_stop" = "Off";
+"still_working" = "Still Working";
+"check_in" = "Check In";
+"check_out" = "Check Out";

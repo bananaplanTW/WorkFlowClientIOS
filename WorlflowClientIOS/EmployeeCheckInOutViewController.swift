@@ -66,15 +66,15 @@ class EmployeeCheckInOutPromptViewController: UIViewController, CLLocationManage
     func renderActions () {
         switch employee.status {
         case .STOP, .OFF:
-            checkInTime.text = "尚未上班"
-            checkOutTime.text = "尚未上班"
-            checkInOutButton.setTitle("打卡上班", forState: UIControlState.Normal)
+            checkInTime.text = NSLocalizedString("still_stop", comment: "尚未上班")
+            checkOutTime.text = NSLocalizedString("still_stop", comment: "尚未上班")
+            checkInOutButton.setTitle(NSLocalizedString("check_in", comment: "打卡上班"), forState: UIControlState.Normal)
             break
         case .WIP, .PENDING, .PAUSE:
             if let timecard = employee.timecard {
                 checkInTime.text = NSDateFormatter.localizedStringFromDate(timecard.startDate, dateStyle: .NoStyle, timeStyle: .ShortStyle)
-                checkOutTime.text = "尚未下班"
-                checkInOutButton.setTitle("打卡下班", forState: UIControlState.Normal)
+                checkOutTime.text = NSLocalizedString("still_working", comment: "尚未下班")
+                checkInOutButton.setTitle(NSLocalizedString("check_out", comment: "打卡下班"), forState: UIControlState.Normal)
             } else {
                 // 打卡錯誤
             }

@@ -6,5 +6,11 @@
   Copyright © 2015 Daz. All rights reserved.
 */
 
-"test" = "測試";
-"test2" = "測試2";
+"current_task" = "目前工作";
+"scheduled_tasks" = "排程中工作";
+"start_task" = "開始工作";
+
+"still_stop" = "尚未上班";
+"still_working" = "尚未下班";
+"check_in" = "打卡上班";
+"check_out" = "打卡下班";

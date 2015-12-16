@@ -130,3 +130,6 @@
 
 /* Class = "UIButton"; normalTitle = "發文"; ObjectID = "zhh-20-Hcp"; */
 "zhh-20-Hcp.normalTitle" = "發送";
+
+/* Class = "UINavigationItem"; normalTitle = "Activity"; ObjectID = "lA4-2v-KJR"; */
+"lA4-2v-KJR.title" = "工作記錄";
