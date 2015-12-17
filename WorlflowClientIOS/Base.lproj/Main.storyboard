@@ -205,7 +205,11 @@
                                 </subviews>
                             </view>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="X3O-68-6Hn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="X3O-68-6Hn">
+                            <connections>
+                                <action selector="onLogout:" destination="D3i-jo-tCx" id="qOp-zx-AEZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

@@ -42,8 +42,8 @@ class WorkingDataStore {
     private var scheduledTaskList: Array<Task> = []
 
     private var employee: Employee?
-    private var authToken:String = "Vx-i8Cgxdr5Mk_-mdL0HXJC9dkXfj50-vWO9oA3gEtv"
-    private var userId: String = "pwcfTg448eeGafZWY"
+    private var authToken:String = ""
+    private var userId: String = ""
 
 
     func setUserId (userId: String) {
@@ -61,8 +61,20 @@ class WorkingDataStore {
     func getEmployee () -> Employee? {
         return employee
     }
-    
-    
+    func isLogin () -> Bool {
+        return employee != nil
+    }
+
+
+    func reset () {
+        employee = nil
+        userId = ""
+        authToken = ""
+        wipTask = nil
+        scheduledTaskList = []
+    }
+
+
     func getTaskByTaskId (taskId: String) -> Task? {
         if wipTask?.id == taskId {
             return wipTask
@@ -77,7 +89,7 @@ class WorkingDataStore {
         return scheduledTaskList
     }
 
-    
+
     func syncTasks () {
         let headers:Dictionary = [
             "x-auth-token": authToken,
@@ -130,8 +142,8 @@ class WorkingDataStore {
         print(wipTask)
         print(scheduledTaskList)
     }
-    
-    
+
+
     func syncSelf () {
         let headers:Dictionary = [
             "x-auth-token": authToken,

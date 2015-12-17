@@ -27,8 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userId = pref.valueForKey("userId") as? String
         let authToken = pref.valueForKey("authToken") as? String
         if userId != nil && authToken != nil {
-            WorkingDataStore.sharedInstance().setUserId(userId!)
-            WorkingDataStore.sharedInstance().setAuthToken(authToken!)
+            let instance = WorkingDataStore.sharedInstance()
+            instance.setUserId(userId!)
+            instance.setAuthToken(authToken!)
         }
     }
     
@@ -116,10 +117,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
-        NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE, object: nil)
-        // [TODO] should inform all
-        WorkingDataStore.sharedInstance().syncTasks()
+        let instance = WorkingDataStore.sharedInstance()
+        if instance.isLogin() {
+            instance.syncSelf()
+            instance.syncTasks()
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -57,7 +57,6 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         if let _employee = WorkingDataStore.sharedInstance().getEmployee() {
             employee = _employee
             employeeName.text = _employee.name
-            syncTaskData()
         }
     }
     func onEmployeeIconUpdated () {
@@ -197,6 +196,15 @@ class EmployeeWorkingStatusTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func onLogout(sender: UIBarButtonItem) {
+        WorkingDataStore.sharedInstance().reset()
+
+        let pref = NSUserDefaults.standardUserDefaults()
+        pref.removeObjectForKey("userId")
+        pref.removeObjectForKey("authToken")
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // Override to support editing the table view.

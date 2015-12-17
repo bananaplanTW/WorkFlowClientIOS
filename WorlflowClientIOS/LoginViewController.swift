@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         initData()
         initViews()
+    }
+    override func viewDidAppear(animated: Bool) {
         checkLogin()
     }
 
@@ -69,8 +71,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if let res = parsedData as? NSDictionary {
                         if res["status"] as! String == "success" {
                             let loginData = res["data"] as! NSDictionary
-                            WorkingDataStore.sharedInstance().setUserId(loginData["userId"] as! String)
-                            WorkingDataStore.sharedInstance().setAuthToken(loginData["authToken"] as! String)
+                            let instance = WorkingDataStore.sharedInstance()
+                            instance.setUserId(loginData["userId"] as! String)
+                            instance.setAuthToken(loginData["authToken"] as! String)
 
                             // update user preference
                             let pref = NSUserDefaults.standardUserDefaults()
@@ -95,9 +98,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         dispatch_async(dispatch_get_main_queue()) {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController = storyBoard.instantiateViewControllerWithIdentifier("RootViewController")
+            rootViewController.modalTransitionStyle = .CrossDissolve
 
-            WorkingDataStore.sharedInstance().syncSelf()
             self.presentViewController(rootViewController, animated: true, completion: nil)
+
+            let instance = WorkingDataStore.sharedInstance()
+            instance.syncSelf()
+            instance.syncTasks()
+
+            self.userName.text = ""
+            self.password.text = ""
         }
     }
 }
