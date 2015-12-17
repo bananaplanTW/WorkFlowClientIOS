@@ -18,12 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         registerNotificaitons()
-        //initializeActions()
+        initializeActions()
         return true
     }
     
     func initializeActions () {
-        WorkingDataStore.sharedInstance().syncSelf()
+        let pref = NSUserDefaults.standardUserDefaults()
+        let userId = pref.valueForKey("userId") as? String
+        let authToken = pref.valueForKey("authToken") as? String
+        if userId != nil && authToken != nil {
+            WorkingDataStore.sharedInstance().setUserId(userId!)
+            WorkingDataStore.sharedInstance().setAuthToken(authToken!)
+        }
     }
     
     func registerNotificaitons () {

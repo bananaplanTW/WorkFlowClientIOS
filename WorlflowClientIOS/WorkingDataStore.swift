@@ -25,6 +25,7 @@ class WorkingDataStore {
 
     static let ACTION_EMPLOYEE_CHECK_IN_OUT = "actionEmployeeCheckInOut"
     static let ACTION_EMPLOYEE_LOGIN_COMPLETE = "actionEmployeeLoginComplete"
+    static let ACTION_EMPLOYEE_LOGIN_FAIL = "actionEmployeeLoginFail"
 
     static let ACTION_LOAD_EMPLOYEE_TASKS_COMPLETE = "actionLoadEmployeeTasksComplete"
     static let ACTION_LOAD_EMPLOYEE_TASKS_FAIL = "actionLoadEmployeeTasksFail"
@@ -43,8 +44,8 @@ class WorkingDataStore {
     private var employee: Employee?
     private var authToken:String = "Vx-i8Cgxdr5Mk_-mdL0HXJC9dkXfj50-vWO9oA3gEtv"
     private var userId: String = "pwcfTg448eeGafZWY"
-    
-    
+
+
     func setUserId (userId: String) {
         self.userId = userId
     }

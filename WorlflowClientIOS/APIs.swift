@@ -22,5 +22,6 @@ class APIs {
         static let COMPLETE_TASK = "/api/v2/complete-task"
         static let LOGIN = "/api/login"
         static let CEHCK_TASK_TODO = "/api/v2/check-task-todo"
+        static let CHECK_LOGIN = "/api/login-status"
     }
 }

@@ -17,21 +17,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialize()
+        initData()
+        initViews()
+        checkLogin()
     }
-    
-    func initialize() {
+
+    func checkLogin() {
+        GetAPI.checkLogin() {
+            (response, data, errors) in
+            if errors == nil {
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_EMPLOYEE_LOGIN_COMPLETE, object: nil)
+            } else {
+                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_EMPLOYEE_LOGIN_FAIL, object: nil)
+            }
+        }
+    }
+
+    func initData() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "goToRootViewController", name: WorkingDataStore.ACTION_EMPLOYEE_LOGIN_COMPLETE, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showLoginForm", name: WorkingDataStore.ACTION_EMPLOYEE_LOGIN_FAIL, object: nil)
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tapGestureRecognizer)
-
-        setupViews()
     }
-    
-    func setupViews() {
+    func initViews() {
+        loginContainer.hidden = true
         loginContainer.layer.borderWidth = 1
         loginContainer.layer.borderColor = UIColor.blackColor().CGColor
+    }
+    func showLoginForm () {
+        loginContainer.hidden = false
     }
     
     func dismissKeyboard() {
@@ -41,15 +56,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     @IBAction func onLoginButtonClick(sender: AnyObject) {
         dismissKeyboard()
 
         PostAPI.login(userName.text!, password: password.text!, companyAccount: "") {
             (response: NSURLResponse?, data: NSData?, errors: NSError?) in
             if errors == nil {
-                WorkingDataStore.sharedInstance().syncSelf()
-                NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_EMPLOYEE_LOGIN_COMPLETE, object: nil)
+                do {
+                    let parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+
+                    if let res = parsedData as? NSDictionary {
+                        if res["status"] as! String == "success" {
+                            let loginData = res["data"] as! NSDictionary
+                            WorkingDataStore.sharedInstance().setUserId(loginData["userId"] as! String)
+                            WorkingDataStore.sharedInstance().setAuthToken(loginData["authToken"] as! String)
+
+                            // update user preference
+                            let pref = NSUserDefaults.standardUserDefaults()
+                            pref.setValue(loginData["userId"] as! String, forKey: "userId")
+                            pref.setValue(loginData["authToken"] as! String, forKey: "authToken")
+
+                            NSNotificationCenter.defaultCenter().postNotificationName(WorkingDataStore.ACTION_EMPLOYEE_LOGIN_COMPLETE, object: nil)
+                            return
+                        }
+                    }
+                    print("Login failed")
+                } catch {
+                    print("Login failed")
+                }
             } else {
                 print("Login failed")
             }
@@ -61,6 +96,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController = storyBoard.instantiateViewControllerWithIdentifier("RootViewController")
 
+            WorkingDataStore.sharedInstance().syncSelf()
             self.presentViewController(rootViewController, animated: true, completion: nil)
         }
     }

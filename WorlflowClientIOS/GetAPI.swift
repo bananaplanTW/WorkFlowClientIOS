@@ -13,4 +13,13 @@ class GetAPI {
         let imageUrl:String = URLUtils.buildURLString(APIs.BASE_URL, endPoint: imagePath, queries: nil)
         RestfulUtils.getDataFromUrl(imageUrl, backward: backward)
     }
+    class func checkLogin(backward: (NSURLResponse!, NSData?, NSError!) -> Void) {
+        let urlString = URLUtils.buildURLString(APIs.BASE_URL, endPoint: APIs.END_POINTS.CHECK_LOGIN, queries: nil)
+
+        let headers:Dictionary = [
+            "x-auth-token": WorkingDataStore.sharedInstance().getAuthToken(),
+            "x-user-id": WorkingDataStore.sharedInstance().getUserId()
+        ]
+        RestfulUtils.get(urlString, headers: headers, backward: backward)
+    }
 }
